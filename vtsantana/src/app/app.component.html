@@ -1,7 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ul class="nav nav-pills nav-stacked">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
-<app-home></app-home>
+<div id="menu">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Home</a></li>
+    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Projetos</a></li>
+    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Blog</a></li>
+  </ul>
+</div>
+<div class="contents">
+  <app-home></app-home>
+</div>

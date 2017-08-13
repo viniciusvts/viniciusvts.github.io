@@ -1,3 +1,11 @@
 #menu{
+    position: fixed;
     width: 200px;
+    padding: 0px;
+    margin: 0px;
+}
+.contents{
+    position: relative;
+    float: right;
+    z-index: -1;
 }
