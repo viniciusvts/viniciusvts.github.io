@@ -3,10 +3,13 @@
     float: left;
     width: 100%;
     padding: 0px;
+    border: solid 2px #CBCBCB;
     margin: 0px;
+    background-color: whitesmoke;
 }
 .contents{
-    margin-top: 10%;
-    float: bottom;
-    z-index: -1;
+    float: left;
+    margin: auto;
+    padding: 0px;
+    width: 70%;
 }
