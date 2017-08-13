@@ -1,11 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="menu">
-  <ul class="nav nav-pills nav-stacked">
-    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Home</a></li>
-    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Projetos</a></li>
-    <li role="presentation" [class.active]="menuOption == 'home'"><a href="#">Blog</a></li>
+  <ul class="nav nav-pills">
+    <li role="presentation" [class.active]="menuOption == 'home'" (click)="menuOption = 'home'">
+      <a href="#">Home</a></li>
+    <li role="presentation" [class.active]="menuOption == 'projetos'" (click)="menuOption = 'projetos'">
+      <a href="#">Projetos</a></li>
+    <li role="presentation" [class.active]="menuOption == 'blog'" (click)="menuOption = 'blog'">
+      <a href="#">Blog</a></li>
   </ul>
 </div>
 <div class="contents">
-  <app-home></app-home>
+  <app-home [hidden]="!(menuOption == 'home')"></app-home>
 </div>

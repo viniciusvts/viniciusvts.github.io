@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  menuOption: string = "home";
+  menuOption = 'home';
+
+  imprime(impremw: string) {
+    console.log(impremw);
+  }
 }

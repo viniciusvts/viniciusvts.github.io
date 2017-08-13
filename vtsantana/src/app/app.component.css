@@ -1,11 +1,12 @@
 #menu{
     position: fixed;
-    width: 200px;
+    float: left;
+    width: 100%;
     padding: 0px;
     margin: 0px;
 }
 .contents{
-    position: relative;
-    float: right;
+    margin-top: 10%;
+    float: bottom;
     z-index: -1;
 }
