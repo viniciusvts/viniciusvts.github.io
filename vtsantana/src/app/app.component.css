@@ -4,7 +4,7 @@
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: rgb(66, 66, 66);
+    background-color: #00645F
 }
 .nav-tabs li.active a{
     background-color: #DAA520;
