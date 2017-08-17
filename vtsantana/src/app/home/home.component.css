@@ -1,7 +1,27 @@
-.images{
-    width: 50%;
-    border-radius: 50%;
+.imglinks{
+    width: 70px;
+    height: 70px;
+    float: left;
 }
 #corpo{
     text-align: center;
+}
+#conjlinks{
+    display: inline-flex;
+    position: absolute;
+    transform: translate(-260px, 90px);
+    flex-direction: row;
+}
+img{
+    margin: 30px;
+}
+h1, small{
+    color: white;
+}
+h1{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5em;
+}
+small{
+    font-family: 'Saira Semi Condensed', sans-serif;
 }
