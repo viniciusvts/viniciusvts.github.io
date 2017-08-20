@@ -1,9 +1,12 @@
-<div class="cardprojeto">
+<h1>Realizações:</h1>
+<div class="cardprojeto" *ngFor="let proj of bio.projetos">
   <md-card>
-    <md-card-title>	Título do cartão</md-card-title>
-      <md-card-subtitle>	Legenda do cartão</md-card-subtitle>
-      <md-card-content>	Conteúdo da carta principal. Destinado a blocos de texto</md-card-content>
-      <md-card-actions>	Recipiente para botões na parte inferior do cartão</md-card-actions>
-      <md-card-footer>ancora</md-card-footer>
+    <md-card-title>{{ proj.nome }}</md-card-title>
+      <md-card-subtitle>{{ proj.sub }}</md-card-subtitle>
+      <md-card-content>{{ proj.descricao }}</md-card-content>
+      <md-card-actions>
+        <a md-button href="{{ proj.linkproj }}" target="_blank">Google Play</a>
+        <a md-button href="{{ proj.linkgit }}" target="_blank">Git Hub</a>
+      </md-card-actions>
   </md-card>
 </div>

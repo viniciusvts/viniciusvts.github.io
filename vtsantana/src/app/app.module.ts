@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MdCardModule } from '@angular/material';
+import {MdButtonModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { BlogComponent } from './blog/blog.component';
 
-import { MdCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MdCardModule } from '@angular/material';
   imports: [
     BrowserAnimationsModule,
     MdCardModule,
-    BrowserModule
+    MdButtonModule,
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [
