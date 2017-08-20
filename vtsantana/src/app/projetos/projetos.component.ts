@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./projetos.component.css']
 })
 export class ProjetosComponent implements OnInit {
-  bio: object;
+  bio;
 
   constructor(private http: HttpClient) { }
 
