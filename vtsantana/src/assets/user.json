@@ -13,6 +13,13 @@
             "descricao" : "O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no peso ideal. Desenvolvido pelo polímata Lambert Quételet no fim do século XIX, trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa, sendo, por isso, um preditor internacional de obesidade adotado pela Organização Mundial da Saúde (OMS). (Wikipédia).",
             "linkproj" : "https://play.google.com/store/apps/details?id=br.com.vtsantana.imcCalculo",
             "linkgit" : "https://github.com/viniciusvts/imcCalculo"
+        },
+        {
+            "nome" : "Site vtsantana.com.br",
+            "sub" : "Site pesooal do desenvolvedor",
+            "descricao" : "Página pessoal do desenvolvedor",
+            "linkproj" : "http://www.vtsantana.com.br",
+            "linkgit" : "https://github.com/viniciusvts/viniciusvts.github.io"
         }
     ]
 
