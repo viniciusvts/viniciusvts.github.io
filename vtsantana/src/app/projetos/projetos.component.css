@@ -1,6 +1,9 @@
-.cardprojeto{
+#projetoslist{
     width: 90%;
     margin: auto;
+}
+.cardprojeto{
+    margin-bottom: 10px;
 }
 h1{
     color: white;

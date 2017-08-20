@@ -1,11 +1,11 @@
 <h1>Realizações:</h1>
-<div class="cardprojeto" *ngFor="let proj of bio.projetos">
-  <md-card>
+<div id="projetoslist" *ngFor="let proj of bio.projetos">
+  <md-card class="cardprojeto">
     <md-card-title>{{ proj.nome }}</md-card-title>
       <md-card-subtitle>{{ proj.sub }}</md-card-subtitle>
       <md-card-content>{{ proj.descricao }}</md-card-content>
       <md-card-actions>
-        <a md-button href="{{ proj.linkproj }}" target="_blank">Google Play</a>
+        <a md-button href="{{ proj.linkproj }}" target="_blank">Acesse!</a>
         <a md-button href="{{ proj.linkgit }}" target="_blank">Git Hub</a>
       </md-card-actions>
   </md-card>
