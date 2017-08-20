@@ -7,13 +7,16 @@
     text-align: center;
 }
 #conjlinks{
-    display: inline-flex;
-    position: absolute;
-    transform: translate(-260px, 90px);
-    flex-direction: row;
+    width: 280px;
+    margin: auto;
 }
 img{
     margin: 30px;
+}
+.titulo{
+    width: 60%;
+    margin: auto;
+    padding-top: 50px;
 }
 h1, small{
     color: white;
