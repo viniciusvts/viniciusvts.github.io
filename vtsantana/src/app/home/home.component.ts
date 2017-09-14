@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -6,16 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  links = {
-    'linkedin' : 'https://www.linkedin.com/in/viniciusvts/',
-    'github' : 'https://github.com/viniciusvts',
-    'facebook' : 'https://www.facebook.com/viniciusvts',
-    'email' : 'mailto:dev@vtsantana.com.br'
-  };
+  links;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+		this.appService.getBio().then( results => this.links = results.social);
   }
 
 }
