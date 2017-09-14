@@ -5,6 +5,7 @@ import { MdCardModule } from '@angular/material';
 import {MdButtonModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
+import { AppService } from './app.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProjetosComponent } from './projetos/projetos.component';
@@ -25,7 +26,7 @@ import { BlogComponent } from './blog/blog.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [
     AppComponent,
     HomeComponent,
