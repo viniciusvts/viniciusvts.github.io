@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-projetos',
@@ -9,16 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class ProjetosComponent implements OnInit {
   bio;
 
-  constructor(private http: HttpClient) { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.http.get(
-      '../assets/user.json'
-    ).subscribe(
-        data => {
-          this.bio = data;
-        }
-      );
+    this.appService.getBio().then( results => this.bio = results);
   }
 
 }
