@@ -1,6 +1,0 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
-@import "~@angular/material/prebuilt-themes/purple-green.css";
-body{
-    background-color: #DAA520;
-}
