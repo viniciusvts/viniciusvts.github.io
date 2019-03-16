@@ -1,5 +1,11 @@
-
 [
+  {
+    "title": "Automação de prédios empresariais",
+    "Subtitle": "Automação pensada para otimização de tempo e custos de uma empresa",
+    "content": "Após inserir os horário de início e de final de uma reunião ou aula de uma determinada sala, a automação ligue e desligue os eletro-eletrônicos da mesma nos horários inseridos",
+    "link": "https://github.com/viniciusvts/BuildingAutomation",
+    "linkgit": "https://github.com/viniciusvts/BuildingAutomation"
+  },
   {
     "title": "IMC Cálculo",
     "Subtitle": "Para o cálculo do indice de massa corporal",
