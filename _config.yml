@@ -8,7 +8,7 @@ masthead_title: ""
 logo: "/assets/logo.jpg"
 favicon: "/assets/favicon.ico"
 url: "https://viniciusvts.github.io"
-# baseurl: "/sub"
+baseurl: ""
 search: true
 repository: "viniciusvts/viniciusvts.github.io"
 #https://mmistakes.github.io/minimal-mistakes/docs/navigation/
