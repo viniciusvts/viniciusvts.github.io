@@ -1,0 +1,10 @@
+name: On Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-docs-deploy:
+    uses: ./.github/workflows/docs-deploy.yml
