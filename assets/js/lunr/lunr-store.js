@@ -4,4 +4,10 @@ var store = [{
         "tags": [],
         "url": "/blog/a-reflection-about-time/",
         "teaser": null
+      },{
+        "title": "Dominating the conversion of SVN repositories to GIT",
+        "excerpt":"Plan and Make. (Image by Brett Jordan on Unsplash) In the agile work environment I’m in, there were times between sprints when I found myself without immediate tasks. Instead of letting this idle time go unnoticed, I decided to use it productively. As a professional committed to my growth and...","categories": [],
+        "tags": [],
+        "url": "/blog/dominating-the-conversion-from-SVN-to-GIT/",
+        "teaser": null
       }]
