@@ -1,7 +1,96 @@
 remote_theme: "mmistakes/minimal-mistakes@4.28.0"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+locale: "en-US"
+title: "Santana Software Architect Blog"
+description: "Just another software developer blog"
+subtitle: # "Thoughts and writings"
+masthead_title: ""
+logo: "/assets/logo.jpg"
+favicon: "/assets/favicon.ico"
+url: "https://viniciusvts.github.io"
+# baseurl: "/sub"
+search: true
+repository: "viniciusvts/viniciusvts.github.io"
+#https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+breadcrumbs: true
+breadcrumb_home_label : "Home"
+breadcrumb_separator  : "/"
+permalink: /blog/:title/
+# date_format: "%Y-%B-%d"
+enable_copy_code_button: true
+og_image: /assets/img/logo.jpg
+og_image_alt: "Santana Soluções Web Logo"
+include:
+  - _pages
+#front matter
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author: Vinicius de Santana
+      author_profile: false
+      header:
+        overlay_color: "#434851"
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+      toc: true
+      toc_label: "On this article"
+      toc_icon: "list"
+      toc_sticky: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author: Vinicius de Santana
+      author_profile: false
+#comments
+comments:
+  provider: "facebook"
+  facebook:
+    appid: # optional
+    num_posts: 5 # 5 (default)
+    colorscheme: "dark" # "light" (default), "dark"
+#pagination
+pagination:
+  enabled: true
+  collection: 'posts'
+  per_page: 5
+  permalink: '/page/:num/'  # Pages are index.html inside this folder (default)
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+#footer
+footer:
+  since: 2020
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/viniciusvts"
+      rel: "nofollow"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/viniciusvts"
+      rel: "nofollow"
+
+#plugins:
 plugins:
   - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-include-cache
+
+# todo
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/#google-search-console

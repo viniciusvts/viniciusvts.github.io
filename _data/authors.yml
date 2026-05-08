@@ -1,0 +1,15 @@
+# author
+Vinicius de Santana:
+  name     : "Vinicius de Santana"
+  avatar   : "/assets/images/bio-photo.jpg"
+  bio      : "Full Stack Software Architect."
+  location : "Salvador, Bahia, Brazil"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/viniciusvts"
+      rel: "nofollow"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/viniciusvts"
+      rel: "nofollow"
