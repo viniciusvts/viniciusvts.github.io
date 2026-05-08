@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "/blog/dominating-the-conversion-from-SVN-to-GIT/",
         "teaser": null
+      },{
+        "title": "Converting an SVN repository to GIT: a practical guide",
+        "excerpt":"Conversion of source code managers. (image by DALL-E) Converting an SVN repository to a GIT repository is a process that involves migrating the data, structure, and history from one version control system to another. In the previous article, I discussed my research and in-depth study of converting SVN repositories to...","categories": [],
+        "tags": [],
+        "url": "/blog/the-guide-from-GIT-to-SVN-conversion/",
+        "teaser": null
       }]
