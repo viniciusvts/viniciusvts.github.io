@@ -6,7 +6,7 @@ description: "Just another software developer blog"
 subtitle: # "Thoughts and writings"
 masthead_title: ""
 logo: "/assets/logo.jpg"
-favicon: "/assets/favicon.ico"
+favicon: "/favicon.ico"
 url: "https://viniciusvts.github.io"
 baseurl: ""
 search: true
