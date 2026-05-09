@@ -26,7 +26,7 @@ If you don't have GIT installed, the output will be similar to:
 git: command not found
 ```
 
-If you don't have GIT installed, install it following the instructions available at: <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+If you don't have GIT installed, install it following the instructions available at: <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
 
 To check if SVN is installed on your computer, run the following command in the terminal:
 
@@ -44,7 +44,7 @@ If you do not have SVN installed, the output will be similar to:
 svn: command not found
 ```
 
-If you do not have SVN installed, install it following the instructions available at: <a target="_blank" rel="noopener noreferrer" href="https://subversion.apache.org/quick-start">https://subversion.apache.org/quick-start</a>
+If you do not have SVN installed, install it following the instructions available at: <a target="_blank" rel="noopener" href="https://subversion.apache.org/quick-start">https://subversion.apache.org/quick-start</a>
 
 ## Create the authors file.
 
@@ -112,6 +112,6 @@ This process can be interrupted, so you can start it one day, stop, and continue
 
 ## Conclusion
 
-This article presents a step-by-step guide to converting an SVN repository to a GIT repository using the git-svn tool. It explains the main commands needed for the migration. Remember that your needs may differ. For troubleshooting, please refer to the official documentation for the tool: <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/docs/git-svn/pt_BR">https://git-scm.com/docs/git-svn/pt_BR</a>.
+This article presents a step-by-step guide to converting an SVN repository to a GIT repository using the git-svn tool. It explains the main commands needed for the migration. Remember that your needs may differ. For troubleshooting, please refer to the official documentation for the tool: <a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-svn/pt_BR">https://git-scm.com/docs/git-svn/pt_BR</a>.
 
 I hope this article is useful for those who want to transition from SVN to GIT, or simply learn more about these two tools.

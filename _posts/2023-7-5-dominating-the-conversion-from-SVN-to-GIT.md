@@ -11,11 +11,11 @@ In the agile work environment I'm in, there were times between sprints when I fo
 
 This can bring several benefits such as greater collaborative efficiency: detailed commit history, version tracking, and faster development.
 
-By investing this time in research using reliable sources such as official documentation, I acquired essential knowledge about the <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/docs/git-svn">commands</a>, best practices, and  difficulties encountered during the conversion from SVN to Git repositories.
+By investing this time in research using reliable sources such as official documentation, I acquired essential knowledge about the <a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-svn">commands</a>, best practices, and  difficulties encountered during the conversion from SVN to Git repositories.
 
 In addition, I took advantage of online resources such as discussion forums to gain a broader and more practical understanding of the subject. These resources allowed me to explore common challenges faced during migration, learn from the experiences of other professionals, and discover efficient solutions.
 
-Alongside my research on repository conversion, I also invested time in understanding and using <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodules</a>. These submodules allow the inclusion of repositories within other repositories, facilitating dependency management and collaboration between different teams or projects. Delving deeper into this aspect of Git will be fundamental to using this functionality properly and optimizing integration, as existing SVN repositories utilize a similar feature.
+Alongside my research on repository conversion, I also invested time in understanding and using <a target="_blank" rel="noopener" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git submodules</a>. These submodules allow the inclusion of repositories within other repositories, facilitating dependency management and collaboration between different teams or projects. Delving deeper into this aspect of Git will be fundamental to using this functionality properly and optimizing integration, as existing SVN repositories utilize a similar feature.
 
 Taking advantage of free time between sprints to improve my knowledge of converting SVN repositories to Git and using Git submodules is an extremely beneficial choice. In addition to expanding my knowledge base, I expect this knowledge to help me become a valuable resource for the team by providing valuable information on this subject.
 
