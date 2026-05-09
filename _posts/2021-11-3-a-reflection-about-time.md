@@ -1,16 +1,16 @@
 ---
 title:  "A reflection about time"
-excerpt: "I believe most people know the saying: \"Time is money,\" and I think there are more reasons to believe in this statement."
+excerpt: "I believe most people know the saying: \"Time is money,\" and I think there are many reasons why this is true."
+translation_key: a-reflection-about-time
 ---
 
 {% include figure popup=false image_path="/assets/images/clock-in-hand-lukasBlazek.png" alt="A hand holding a clock" caption="Time is money. (image by Lukas Blazek on Unsplash)" %}
 
-
 Dear reader, I hope you are well and succeeding in managing your time.
 
-I believe most people know the saying: "Time is money," and I think there are more reasons to believe in this statement.
+I believe most people know the saying: "Time is money," and I think there are many reasons why this is true.
 
-We are paid for the time we spend working; after all, we are available 8 hours a day, 48 hours a week, in exchange for a monthly salary.
+We are paid for the time we spend working; after all, we spend 8 hours a day working, 48 hours a week, in exchange for a monthly salary.
 
 If, for some unjustifiable reason, we do not complete the required hours, our salary is proportionally reduced. If we agree to dedicate ourselves for a longer period, we receive additional pay for it.
 
@@ -18,13 +18,13 @@ Another example of time as money is social media, which monetizes the time dedic
 
 ## Valuing Time Well
 
-With the stimulus provided by the coronavirus pandemic, many companies started working remotely, sparing their employees the commute between home and work.
+As a result of the coronavirus pandemic, many companies started working remotely, sparing their employees the commute between home and work.
 
 The improved quality of life achieved with this small change made me realize I could reassess how I was spending my time on other activities.
 
 Regarding the time spent commuting to work, it was about 2 hours a day.
 
-My smartphone showed about 2 hours dedicated to a social network every day. I replaced this with a news app, and besides finding it more useful, there was a reduction in usage time.
+My smartphone showed that I was spending about 2 hours a day on social media every day. I replaced this with a news app, and besides finding it more useful, there was a reduction in usage time.
 
 I eliminated all interruptions by disabling alert/message notifications; from then on, the phone only rings for voice/video calls.
 

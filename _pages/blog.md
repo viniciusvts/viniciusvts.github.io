@@ -4,4 +4,5 @@ layout: home
 permalink: /blog/
 pagination:
   enabled: true
+  category: en
 ---

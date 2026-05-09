@@ -8,4 +8,18 @@
 
   gtag('config', 'G-JQ06TDV570');
 </script>
+<!-- Render hreflang alternate links for posts that have a translation_keyend -->
+{% if page.translation_key %}
+  {% assign translations = site.posts | where: "translation_key", page.translation_key %}
+  {% for t in translations %}
+    {% if t.lang and t.url %}
+      <link rel="alternate" hreflang="{{ t.lang }}" href="{{ site.url }}{{ site.baseurl }}{{ t.url | replace:'index.html','' }}" />
+    {% endif %}
+  {% endfor %}
+  {% comment %} Optional x-default pointing to the english version if present {% endcomment %}
+  {% assign en = translations | where: "lang", "en" | first %}
+  {% if en %}
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}{{ en.url | replace:'index.html','' }}" />
+  {% endif %}
+{% endif %}
 <!--end _includes/head/custom.html -->

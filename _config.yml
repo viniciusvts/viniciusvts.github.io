@@ -32,6 +32,8 @@ defaults:
       layout: single
       author: Vinicius de Santana
       author_profile: false
+      lang: en
+      categories: [en]
       header:
         overlay_color: "#434851"
       read_time: true
@@ -51,6 +53,16 @@ defaults:
       layout: single
       author: Vinicius de Santana
       author_profile: false
+  # _posts/pt-br defaults
+  - scope:
+      path: "_posts/pt-br"
+      type: posts
+    values:
+      layout: single
+      author: Vinicius de Santana
+      author_profile: false
+      lang: pt-br
+      categories: [pt-br]
 #comments
 comments:
   provider: "facebook"
@@ -87,10 +99,11 @@ footer:
 #plugins:
 plugins:
   - jekyll-include-cache
-
+  - jekyll-paginate-v2
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-include-cache
+  - jekyll-paginate-v2
 
 # todo
 # https://mmistakes.github.io/minimal-mistakes/docs/configuration/#google-search-console

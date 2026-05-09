@@ -1,6 +1,7 @@
 ---
-title:  "Converting an SVN repository to GIT: a practical guide"
-excerpt: "The guide of you need: Convert SVN repository to GIT."
+title:  "Converting an SVN repository to Git: a practical guide"
+excerpt: "A practical guide to converting SVN repositories to Git."
+translation_key: the-guide-from-GIT-to-SVN-conversion
 ---
 
 {% include figure popup=false image_path="/assets/images/conversion-of-source-code-managers.png" alt="representation of source code manager conversion" caption="Conversion of source code managers. (image by DALL-E)" %}
@@ -17,7 +18,7 @@ git help
 
 The output of this command will be similar to:
 
-{% include figure popup="true" image_path="/assets/images/postContent/the-result-of-git-help-command.png" alt="print of git help command" caption="The result of git help bash command (by author)" %}
+{% include figure popup="true" image_path="/assets/images/postContent/the-result-of-git-help-command.png" alt="print of git help command" caption="The result of 'git help' bash command (by author)" %}
 
 If you don't have GIT installed, the output will be similar to:
 
@@ -25,7 +26,7 @@ If you don't have GIT installed, the output will be similar to:
 git: command not found
 ```
 
-If you don't have GIT installed, install it following the instructions available at: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+If you don't have GIT installed, install it following the instructions available at: <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
 
 To check if SVN is installed on your computer, run the following command in the terminal:
 
@@ -35,7 +36,7 @@ svn help
 
 The output of this command will be similar to:
 
-{% include figure popup="true" image_path="/assets/images/postContent/the-result-of-svn-help-command.png" alt="print of svn help command" caption="The result of svn help bash command (by author)" %}
+{% include figure popup="true" image_path="/assets/images/postContent/the-result-of-svn-help-command.png" alt="print of 'svn help' command" caption="The result of svn help bash command (by author)" %}
 
 If you do not have SVN installed, the output will be similar to:
 
@@ -43,7 +44,7 @@ If you do not have SVN installed, the output will be similar to:
 svn: command not found
 ```
 
-If you do not have SVN installed, install it following the instructions available at: [https://subversion.apache.org/quick-start](https://subversion.apache.org/quick-start)
+If you do not have SVN installed, install it following the instructions available at: <a target="_blank" rel="noopener noreferrer" href="https://subversion.apache.org/quick-start">https://subversion.apache.org/quick-start</a>
 
 ## Create the authors file.
 
@@ -65,7 +66,7 @@ Where `svn_username` is the SVN username, `Full Name` is the author's full name,
 
 ## Initialize the GIT repository
 
-Inside the directory where you want to create the GIT repository, type the command:
+In the directory where you want to create the GIT repository, run the following command:
 
 ```bash
 git svn init <repo_url> --no-metadata
@@ -111,6 +112,6 @@ This process can be interrupted, so you can start it one day, stop, and continue
 
 ## Conclusion
 
-This article presents a step-by-step guide to converting an SVN repository to a GIT repository using the git-svn tool. It explains the main commands needed for the migration. Remember that your needs may differ. For troubleshooting, please refer to the official documentation for the tool: [https://git-scm.com/docs/git-svn/pt_BR](https://git-scm.com/docs/git-svn/pt_BR).
+This article presents a step-by-step guide to converting an SVN repository to a GIT repository using the git-svn tool. It explains the main commands needed for the migration. Remember that your needs may differ. For troubleshooting, please refer to the official documentation for the tool: <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/docs/git-svn/pt_BR">https://git-scm.com/docs/git-svn/pt_BR</a>.
 
 I hope this article is useful for those who want to transition from SVN to GIT, or simply learn more about these two tools.
