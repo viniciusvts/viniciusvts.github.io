@@ -1,0 +1,849 @@
+
+
+<!doctype html>
+
+<html lang="en-US" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Commit com propósito: como padronizar e facilitar a documentação do seu projeto - Santana Software Architect Blog</title>
+<meta name="description" content="Os commits fazem parte da documentação do software porque permitem acompanhar o histórico de desenvolvimento, identificar os autores das mudanças, justificar as decisões tomadas e facilitar a correção de bugs ou a implementação de novas funcionalidade.">
+
+
+  <meta name="author" content="Vinicius de Santana">
+  
+  <meta property="article:author" content="Vinicius de Santana">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Santana Software Architect Blog">
+<meta property="og:title" content="Commit com propósito: como padronizar e facilitar a documentação do seu projeto">
+<meta property="og:url" content="https://viniciusvts.github.io/blog/padronizar-e-facilitar-a-documentacao-de-projetos/">
+
+
+  <meta property="og:description" content="Os commits fazem parte da documentação do software porque permitem acompanhar o histórico de desenvolvimento, identificar os autores das mudanças, justificar as decisões tomadas e facilitar a correção de bugs ou a implementação de novas funcionalidade.">
+
+
+
+  <meta property="og:image" content="https://viniciusvts.github.io/assets/img/logo.jpg">
+  
+    <meta property="og:image:alt" content="Santana Soluções Web Logo">
+  
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-01-08T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://viniciusvts.github.io/blog/padronizar-e-facilitar-a-documentacao-de-projetos/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Santana Software Architect Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- begin _includes/head/custom.html -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ06TDV570"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQ06TDV570');
+</script>
+<!-- Render hreflang alternate links for posts that have a translation_keyend -->
+
+  
+  
+    
+      <link rel="alternate" hreflang="pt-br" href="https://viniciusvts.github.io/blog/padronizar-e-facilitar-a-documentacao-de-projetos/" />
+    
+  
+    
+      <link rel="alternate" hreflang="en" href="https://viniciusvts.github.io/blog/standardize-and-facilitate-your-project-documentation/" />
+    
+  
+  
+  
+  
+    <link rel="alternate" hreflang="x-default" href="https://viniciusvts.github.io/blog/standardize-and-facilitate-your-project-documentation/" />
+  
+
+<!--end _includes/head/custom.html -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.jpg" alt="Santana Software Architect Blog"></a>
+        
+        <a class="site-title" href="/">
+          Santana Software Architect Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Posts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color: #434851; background-image: url('');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Commit com propósito: como padronizar e facilitar a documentação do seu projeto
+
+        
+      </h1>
+      
+        <p class="page__lead">Os commits fazem parte da documentação do software porque permitem acompanhar o histórico de desenvolvimento, identificar os autores das mudanças, justificar as decisões tomadas e facilitar a correção de bugs ou a implementação de novas funcionalidade.
+</p>
+      
+      
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-08T00:00:00+00:00">January 8, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+    
+      
+      <span class="page__meta-sep"></span>
+      <span>
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        Read in 
+        
+          
+            
+              
+              <a href="/blog/standardize-and-facilitate-your-project-documentation/">
+                English
+              </a>
+            
+          
+        
+      </span>
+    
+  </p>
+
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+  
+    
+
+
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Commit com propósito: como padronizar e facilitar a documentação do seu projeto</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Commit com propósito: como padronizar e facilitar a documentação do seu projeto">
+    <meta itemprop="description" content="Os commits fazem parte da documentação do software porque permitem acompanhar o histórico de desenvolvimento, identificar os autores das mudanças, justificar as decisões tomadas e facilitar a correção de bugs ou a implementação de novas funcionalidade.">
+    <meta itemprop="datePublished" content="2024-01-08T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-list"></i> On this article</h4></header>
+              <ul class="toc__menu"><li><a href="#commits-semânticos">Commits Semânticos</a><ul><li><a href="#o-tipo">O Tipo:</a></li><li><a href="#o-escopo">O escopo</a></li><li><a href="#a-descrição">A descrição</a></li><li><a href="#o-corpo">O corpo</a></li><li><a href="#rodapé">Rodapé</a></li></ul></li><li><a href="#conclusão">Conclusão</a></li></ul>
+            </nav>
+          </aside>
+        
+        <figure class=""><img src="/assets/images/padronizar-e-facilitar-a-documentacao-de-projetos.png" alt="representação da construção de uma documentação" /><figcaption>
+      Padronizar a documentação do projeto. (imagem por DALL-E)
+
+    </figcaption></figure>
+
+<p>Estou fazendo parte de um processo que começou com a <a href="/blog/dominando-a-conversao-de-repositorios-SVN-para-GIT/">pesquisa</a> e <a href="/blog/o-guia-da-conversao-de-GIT-para-SVN/">aplicação</a> da conversão de repositórios SVN para GIT. Isso demonstra o nosso profissionalismo e o nosso compromisso com os padrões e boas práticas da nossa área.</p>
+
+<p>Bom, não sei se vocês lembram das aulas de engenharia de software mas em todas as etapas do processo de construção e desenvolvimento de um software é gerado um documento. A etapa de requisitos gera um documento, a especificação gera um documento, o teste, a implementação, as instruções e a manutenção do software também geram documentos.</p>
+
+<p>E dando seguimento em manter nossos esforços em documentação rastreável e auditável, precisamos estabelecer um processo que permita a verificação e validação por outros colegas: a padronização de commits.</p>
+
+<h2 id="commits-semânticos">Commits Semânticos</h2>
+
+<p>O commit no contexto da ciência da computação: “Refere-se ao processo de tornar permanente um conjunto de alterações, ou seja, de efetivar as alterações”. No contexto de controle de versão: “São registros das alterações feitas no código-fonte de um software no sistema de controle de versão”. Eles fazem parte da documentação do software porque permitem acompanhar o histórico de desenvolvimento, identificar os autores das mudanças, justificar as decisões tomadas e facilitar a correção de bugs ou a implementação de novas funcionalidades. Um bom commit deve ter uma mensagem clara, concisa e informativa, que descreva o que foi feito e por quê.</p>
+
+<p>Com o objetivo de fornecer um histórico explícito e padronizado o <strong>commit semântico</strong> ou em sua especificação formal: <strong>conventional commit</strong> se utiliza de regras simples e claras reduzindo o tempo gasto em compreender algo que foi feito, mesmo que por outro time de desenvolvedores.</p>
+
+<p>A especificação <a rel="noopener" target="_blank" href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commit</a> é uma convenção leve sobre mensagens de confirmação, fornecendo um conjunto fácil de regras para criar um histórico de confirmação explícito, o que torna mais fácil escrever ferramentas automatizadas em cima, descrevendo os recursos, correções e alterações de quebra feitas nas mensagens de confirmação.</p>
+
+<p>A mensagem deve ser estruturada da seguinte maneira:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;tipo&gt;[escopo]: &lt;descrição&gt;
+
+[corpo]
+
+[rodapés(s)]
+</code></pre></div></div>
+
+<h3 id="o-tipo">O Tipo:</h3>
+
+<p>Possui a finalidade de indicar a intenção que o usuário teve ao efetivar as alterações:</p>
+
+<ul>
+  <li>fix: corrige um bug ou erro no código.</li>
+  <li>feat: introduz um novo recurso.</li>
+  <li>build: a alteração afeta a compilação ou está relacionado a dependências externas (por exemplo: composer, maven, gulp, broccoli, npm).</li>
+  <li>chore: a alteração ocorre em código que não vai para produção. (por exemplo: .gitignore).</li>
+  <li>ci: descreve alteração nos arquivos e scripts de configuração de CI - Continuous Integration (por exemplo: Travis, Github Actions, Gitlab CI).</li>
+  <li>docs: possui alterações na documentação, (por exemplo: README ou docblocks).</li>
+  <li>perf: indica alterações no código que melhoram o desempenho da aplicação.</li>
+  <li>refactor: para alterações no código que não alteram a funcionalidade da aplicação.</li>
+  <li>style: identifica alterações que alteram o estilo do código, como: espaços, identação, formatação etc.</li>
+  <li>test: descreve a adição de testes ou correção de testes existentes.</li>
+</ul>
+
+<h3 id="o-escopo">O escopo</h3>
+
+<p>O escopo é uma descrição opcional que pode ser adicionada à mensagem para fornecer mais informações sobre a alteração. A especificação de commits semânticos define o escopo como: “um identificador de nível superior, ou seja, relacionado ao projeto, componente ou módulo”.</p>
+
+<h3 id="a-descrição">A descrição</h3>
+
+<p>A descrição é uma mensagem curta e descritiva que resume a alteração feita.</p>
+
+<ul>
+  <li>Comece com um verbo no imperativo no presente simples, como “adiciona”, “corrige”, “remove”, “atualiza” em vez de “adicionou”, “corrigiu”, etc. Isso ajuda a tornar a mensagem mais clara e concisa.</li>
+  <li>Seja específico: Forneça detalhes suficientes na mensagem para que outros desenvolvedores possam entender o que foi alterado. Por exemplo, em vez de “corrige bug”, use “corrige bug de renderização inconsistente em dispositivos móveis”.</li>
+  <li>Separe o assunto do corpo com uma linha em branco, isso ajuda a tornar a mensagem mais fácil de ler.</li>
+</ul>
+
+<h3 id="o-corpo">O corpo</h3>
+
+<p>O corpo da mensagem é opcional, caso seja escrita deve conter informações complementares em relação a tipo, escopo e a descrição resumida já definidas no título.</p>
+
+<p>Use para contextualizar o por quê, em relação à regra de negócio, aquela implementação foi realizada. Seja preciso, descritivo e conciso, evite escrever mensagens longas e detalhadas.</p>
+
+<h3 id="rodapé">Rodapé</h3>
+<p>O rodapé da mensagem de um commit semântico é opcional e pode ser usado para fornecer informações adicionais. O rodapé deve ser separado do corpo da mensagem por uma linha em branco e consistir em um token de palavra, seguido pelo símbolo “:” (dois pontos) um espaço em branco e a descrição.</p>
+
+<p>Alguns exemplos de tokens de palavra que podem ser usados no rodapé da mensagem de um commit semântico:</p>
+
+<ul>
+  <li>Closes: usado para indicar que o commit fecha uma issue.</li>
+  <li>Refs: usado para indicar que o commit faz referência a uma issue.</li>
+  <li>BREAKING CHANGE: usado para indicar que o commit introduz uma mudança que quebra a compatibilidade com versões anteriores.</li>
+  <li>Co-authored-by: usado para indicar que o commit foi escrito por mais de um autor. Cada autor deve ser listado no rodapé com seu nome e endereço de e-mail.</li>
+</ul>
+
+<p>Exemplo de commits semânticos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fix: corrige bug de renderização em dispositivos móveis
+
+Corrige bug que causava renderização inconsistente em dispositivos móveis.
+
+Refs: #456
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>feat: adiciona login com o google
+
+Adiciona nova funcionalidade para permitir que os usuários façam login usando suas contas do Google.
+
+Closes: #123
+</code></pre></div></div>
+
+<h2 id="conclusão">Conclusão</h2>
+
+<p>Neste artigo apresentei uma estratégia para criar um histórico de commits mais claro, consistente e informativo, que reflita as mudanças significativas do seu projeto e facilite o seu gerenciamento. “Commitar com propósito” é uma prática que visa facilitar a comunicação entre os desenvolvedores, além de contribuir para a qualidade da documentação. Espero que este artigo tenha sido útil e que você possa aplicar o aprendizado nos seus próximos projetos.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-01-08T00:00:00+00:00">January 8, 2024</time></p>
+
+
+      </footer>
+
+      
+<section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=Commit+com+prop%C3%B3sito%3A+como+padronizar+e+facilitar+a+documenta%C3%A7%C3%A3o+do+seu+projeto%20https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fpadronizar-e-facilitar-a-documentacao-de-projetos%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fpadronizar-e-facilitar-a-documentacao-de-projetos%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://viniciusvts.github.io/blog/padronizar-e-facilitar-a-documentacao-de-projetos/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Commit+com+prop%C3%B3sito%3A+como+padronizar+e+facilitar+a+documenta%C3%A7%C3%A3o+do+seu+projeto%20https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fpadronizar-e-facilitar-a-documentacao-de-projetos%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/blog/standardize-and-facilitate-your-project-documentation/" class="pagination--pager" title="Commit with purpose: How to standardize and facilitate your project documentation">Previous</a>
+    
+    
+      <a href="/blog/branching-strategy-to-your-project/" class="pagination--pager" title="Choosing the ideal Git branching strategy for your project">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+      
+        
+<div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="https://viniciusvts.github.io/blog/padronizar-e-facilitar-a-documentacao-de-projetos/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="dark"></section>
+    
+</div>
+
+      
+    
+  </article>
+
+  
+  
+    
+
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/estrategias-de-branching-para-seu-projeto/" rel="permalink">Escolhendo a estratégia de branching git ideal para seu projeto
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-05-05T00:00:00+00:00">May 5, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+    
+      
+      <span class="page__meta-sep"></span>
+      <span>
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        Read in 
+        
+          
+            
+              
+              <a href="/blog/standardize-and-facilitate-your-project-documentation/">
+                English
+              </a>
+            
+          
+        
+      </span>
+    
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">As estratégias de branching são roteiros que as equipes utilizam para organizar seu trabalho, manter o controle de diferentes versões do código e colaborar d...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/branching-strategy-to-your-project/" rel="permalink">Choosing the ideal Git branching strategy for your project
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2025-05-05T00:00:00+00:00">May 5, 2025</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+    
+      
+      <span class="page__meta-sep"></span>
+      <span>
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        Read in 
+        
+          
+            
+              
+              <a href="/blog/standardize-and-facilitate-your-project-documentation/">
+                English
+              </a>
+            
+          
+        
+      </span>
+    
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Branching strategies are roadmaps teams use to organize their work, maintain control of different code versions, and collaborate smoothly.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/standardize-and-facilitate-your-project-documentation/" rel="permalink">Commit with purpose: How to standardize and facilitate your project documentation
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-01-08T00:00:00+00:00">January 8, 2024</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+    
+      
+      <span class="page__meta-sep"></span>
+      <span>
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        Read in 
+        
+          
+            
+              
+              <a href="/blog/standardize-and-facilitate-your-project-documentation/">
+                English
+              </a>
+            
+          
+        
+      </span>
+    
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Commits are part of software documentation and allow you to track development history, identify the authors, justify decisions and facilitate bug fixing and ...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/o-guia-da-conversao-de-GIT-para-SVN/" rel="permalink">Conversão de repositório SVN para GIT: um guia prático
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-12-21T00:00:00+00:00">December 21, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+    
+      
+      <span class="page__meta-sep"></span>
+      <span>
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        Read in 
+        
+          
+            
+              
+              <a href="/blog/standardize-and-facilitate-your-project-documentation/">
+                English
+              </a>
+            
+          
+        
+      </span>
+    
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">O guia prático para converter um repositório SVN para GIT.
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        
+<div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://linkedin.com/in/viniciusvts" rel="nofollow noopener noreferrer nofollow"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/viniciusvts" rel="nofollow noopener noreferrer nofollow"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2020 - 2026 <a href="https://viniciusvts.github.io">Santana Software Architect Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+  </body>
+</html>

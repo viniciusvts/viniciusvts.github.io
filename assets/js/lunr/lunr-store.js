@@ -34,4 +34,28 @@ var store = [{
         "tags": [],
         "url": "/blog/o-guia-da-conversao-de-GIT-para-SVN/",
         "teaser": null
+      },{
+        "title": "Commit with purpose: How to standardize and facilitate your project documentation",
+        "excerpt":"Standartize your project documentation. (image por DALL-E) I am part of a process that began with research and application of repository conversion from SVN-to-Git. This represents our professionalism and our commitment to standards and best practices in the software industry. Well, I don’t know if you remember the software engineering...","categories": ["en"],
+        "tags": [],
+        "url": "/blog/standardize-and-facilitate-your-project-documentation/",
+        "teaser": null
+      },{
+        "title": "Commit com propósito: como padronizar e facilitar a documentação do seu projeto",
+        "excerpt":"Padronizar a documentação do projeto. (imagem por DALL-E) Estou fazendo parte de um processo que começou com a pesquisa e aplicação da conversão de repositórios SVN para GIT. Isso demonstra o nosso profissionalismo e o nosso compromisso com os padrões e boas práticas da nossa área. Bom, não sei se...","categories": ["pt-br"],
+        "tags": [],
+        "url": "/blog/padronizar-e-facilitar-a-documentacao-de-projetos/",
+        "teaser": null
+      },{
+        "title": "Choosing the ideal Git branching strategy for your project",
+        "excerpt":"Branching (image by Talashuk on Unsplash) The Git is the standard version control system in modern software development. With the ability to track changes and facilitate collaboration between teams, Git allows different versions of the source code to coexist, enabling parallel work and code maintenance. Branching strategies are roadmaps teams...","categories": ["en"],
+        "tags": [],
+        "url": "/blog/branching-strategy-to-your-project/",
+        "teaser": null
+      },{
+        "title": "Escolhendo a estratégia de branching git ideal para seu projeto",
+        "excerpt":"Ramificação (imagem por Talashuk na Unsplash) O Git é o sistema de controle de versão padrão no desenvolvimento de software moderno. Com a capacidade de rastreio de mudanças e de facilitar a colaboração entre equipes o Git permite que versões do código-fonte coexistam, possibilitando o trabalho em paralelo e a...","categories": ["pt-br"],
+        "tags": [],
+        "url": "/blog/estrategias-de-branching-para-seu-projeto/",
+        "teaser": null
       }]
