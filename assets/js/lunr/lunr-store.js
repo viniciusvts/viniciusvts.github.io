@@ -58,4 +58,16 @@ var store = [{
         "tags": [],
         "url": "/blog/estrategias-de-branching-para-seu-projeto/",
         "teaser": null
+      },{
+        "title": "How I responded to a Supply Chain attack before it hit my project",
+        "excerpt":"If you work within the modern JavaScript/TypeScript ecosystem, there is a very high chance you are using a TanStack library. Whether it’s the omnipresent TanStack Query (formerly React Query), Table, or the newer React Router, they are pretty much everywhere. The attack And May 11, 2026, definitely gave a lot...","categories": ["en"],
+        "tags": [],
+        "url": "/blog/reaction-to-the-tanstack-suply-chain-attack-cve-2026/",
+        "teaser": null
+      },{
+        "title": "Como reagi a um ataque de Supply Chain antes que ele afetasse meu projeto",
+        "excerpt":"Se você trabalha com o ecossistema moderno de JavaScript/TypeScript, há uma grande chance de você usar alguma biblioteca do TanStack. Seja o onipresente TanStack Query (antigo React Query), o Table ou o novo React Router. Eles estão em quase tudo. O ataque E o dia 11 de maio de 2026...","categories": ["pt-br"],
+        "tags": [],
+        "url": "/blog/reacao-ao-ataque-de-suply-chain-do-tanstack-cve-2026/",
+        "teaser": null
       }]
