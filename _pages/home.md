@@ -35,7 +35,7 @@ Developing since 2016 with ❤️ and:
 
 ## Building
 
-- **[String Morpher](https://github.com/SSolWEB/string-morpher)** [![GitHub stars](https://img.shields.io/github/stars/SSolWEB/string-morpher?style=flat&color=gold)](https://github.com/SSolWEB/string-morpher) - A powerful php string manipulation library designed for developers who need efficient and intuitive solutions for modifying and masking strings.
+- **[String Morpher](https://github.com/SSolWEB/string-morpher)** [![GitHub stars](https://img.shields.io/github/stars/SSolWEB/string-morpher?style=flat&color=gold)](https://github.com/SSolWEB/string-morpher) - Library that offers a fluent API, specifically designed for string manipulation, allowing developers to chain multiple methods in a seamless and readable manner.
 
 ## Contributing to
 
