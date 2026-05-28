@@ -2,6 +2,8 @@
 title: "Commit with purpose: How to standardize and facilitate your project documentation"
 excerpt: "Commits are part of software documentation and allow you to track development history, identify the authors, justify decisions and facilitate bug fixing and new features."
 translation_key: standardize-and-facilitate-your-project-documentation
+redirect_from:
+  - /blog/standartize-and-facilitate-yout-project-documentation/
 ---
 
 {% include figure popup=false image_path="/assets/images/padronizar-e-facilitar-a-documentacao-de-projetos.png" alt="representation of documentation construction" caption="Standartize your project documentation. (image por DALL-E)" %}

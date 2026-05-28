@@ -2,6 +2,8 @@
 title:  "Converting an SVN repository to Git: a practical guide"
 excerpt: "A practical guide to converting SVN repositories to Git."
 translation_key: the-guide-from-GIT-to-SVN-conversion
+redirect_from:
+    - /blog/the-guide-from-git-to-svn-conversion/
 ---
 
 {% include figure popup=false image_path="/assets/images/conversion-of-source-code-managers.png" alt="representation of source code manager conversion" caption="Conversion of source code managers. (image by DALL-E)" %}
