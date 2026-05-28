@@ -101,13 +101,11 @@ plugins:
   - jekyll-include-cache
   - jekyll-paginate-v2
   - jekyll-redirect-from
-  - jekyll-sitemap
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-include-cache
   - jekyll-paginate-v2
   - jekyll-redirect-from
-  - jekyll-sitemap
 
 # todo
 # https://mmistakes.github.io/minimal-mistakes/docs/configuration/#google-search-console

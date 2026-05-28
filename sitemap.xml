@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign sitemap_entries = site.html_pages | concat: site.posts %}
+{% for entry in sitemap_entries %}
+{% assign entry_url = entry.url | default: '' %}
+{% if entry_url != '' and entry.sitemap != false and entry_url != '/sitemap.xml' and entry_url != '/robots.txt' %}
+{% unless entry_url contains '/page/' %}
+  <url>
+  <loc>{{ entry_url | replace: 'index.html', '' | absolute_url }}</loc>
+{% if entry.last_modified_at %}
+    <lastmod>{{ entry.last_modified_at | date_to_xmlschema }}</lastmod>
+{% elsif entry.date %}
+    <lastmod>{{ entry.date | date_to_xmlschema }}</lastmod>
+{% endif %}
+  </url>
+{% endunless %}
+{% endif %}
+{% endfor %}
+</urlset>
