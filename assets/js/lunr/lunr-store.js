@@ -70,4 +70,16 @@ var store = [{
         "tags": [],
         "url": "/blog/reacao-ao-ataque-de-suply-chain-do-tanstack-cve-2026/",
         "teaser": null
+      },{
+        "title": "Git Fluid Flow: A Branching Strategy for Decoupled Task Promotion",
+        "excerpt":"A Branching Strategy for Decoupled Task Promotion Introduction Consider the following scenario: Feature A is ready for production. Feature B still contains bugs identified by QA. Feature C is waiting for client approval in staging. Despite that, all of them belong to the same promotion cycle between environments. As a...","categories": ["en"],
+        "tags": [],
+        "url": "/blog/git-fluid-flow-branching-strategy/",
+        "teaser": null
+      },{
+        "title": "Git Fluid Flow: Uma Estratégia de Branching para Entregas Desacopladas",
+        "excerpt":"Uma Estratégia de Branching para Entregas Desacopladas Introdução Admitamos o seguite cenário: A funcionalidade A está pronta para produção. A funcionalidade B ainda possui bugs identificados pelo QA. A funcionalidade C aguarda aprovação do cliente em homologação. Apesar disso, todas fazem parte do mesmo ciclo de promoção entre ambientes. Como...","categories": ["pt-br"],
+        "tags": [],
+        "url": "/blog/estrategia-de-branching-git-fluid-flow/",
+        "teaser": null
       }]
