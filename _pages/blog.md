@@ -5,4 +5,5 @@ permalink: /blog/
 pagination:
   enabled: true
   category: en
+  per_page: 7
 ---
