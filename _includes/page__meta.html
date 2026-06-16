@@ -28,26 +28,29 @@
         {% endif %}
       </span>
     {% endif %}
-    {% if page.translation_key %}
+
+    {% if document.translation_key %}
       {% assign translations = site.posts 
-        | where_exp: "post", "post.translation_key == page.translation_key" 
-        | where_exp: "post", "post.url != page.url" %}
-      <span class="page__meta-sep"></span>
-      <span>
-        <i class="fa-solid fa-language" aria-hidden="true"></i>
-        Read in 
-        {% for t in translations %}
-          {% if t.lang and t.url %}
-            {% if t.lang != page.lang %}
-              {% if forloop.first %}{% else %}, {% endif %}
-              <a href="{{ site.baseurl }}{{ t.url }}">
-                {% if t.lang == 'pt-br' %}Português
-                {% else %}English{% endif %}
-              </a>
+        | where_exp: "post", "post.translation_key == document.translation_key" 
+        | where_exp: "post", "post.id != document.id" %}
+      {% if translations' %}
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          {% for t in translations %}
+            {% if t.lang and t.url %}
+              {% if t.lang != document.lang %}
+                {% if forloop.first %}{% else %}, {% endif %}
+                <a href="{{ site.baseurl }}{{ t.url }}">
+                  {{ site.data.ui-text[t.lang].language_name | default: t.lang }}
+                </a>
+              {% endif %}
             {% endif %}
-          {% endif %}
-        {% endfor %}
-      </span>
+          {% endfor %}
+        </span>
+      {% endif %}
     {% endif %}
+
   </p>
 {% endif %}

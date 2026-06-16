@@ -50,6 +50,7 @@ en: &DEFAULT_EN
   search_algolia_no_results  : "No results"
   results_found              : "Result(s) found"
   back_to_top                : "Back to top"
+  language_name: "English"
 
 # Brazilian Portuguese
 pt-BR: &DEFAULT_PT
@@ -100,3 +101,4 @@ pt-BR: &DEFAULT_PT
   search_algolia_no_results  : "Nenhum resultado"
   results_found              : "Resultado(s) encontrado(s)"
   back_to_top                : "Voltar para o topo"
+  language_name: "Português"

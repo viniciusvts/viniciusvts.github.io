@@ -61,8 +61,8 @@ defaults:
       layout: single
       author: Vinicius de Santana
       author_profile: false
-      lang: pt-br
-      categories: [pt-br]
+      lang: pt-BR
+      categories: [pt-BR]
 #comments
 comments:
   provider: "facebook"
