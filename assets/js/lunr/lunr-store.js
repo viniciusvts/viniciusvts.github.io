@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Uma reflexão sobre o tempo",
-        "excerpt":"Tempo é dinheiro. (imagem by Lukas Blazek on Unsplash) Caro leitor, espero que esteja bem e obtendo êxito no gerenciamento do seu tempo. Acredito que maioria conhece a máxima: “Tempo é dinheiro” e considero possível ter mais motivos para acreditar na afirmação. Recebemos pelo tempo que passamos trabalhando, afinal estamos...","categories": ["pt-br"],
+        "excerpt":"Tempo é dinheiro. (imagem by Lukas Blazek on Unsplash) Caro leitor, espero que esteja bem e obtendo êxito no gerenciamento do seu tempo. Acredito que maioria conhece a máxima: “Tempo é dinheiro” e considero possível ter mais motivos para acreditar na afirmação. Recebemos pelo tempo que passamos trabalhando, afinal estamos...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/uma-reflexao-sobre-o-tempo/",
         "teaser": null
@@ -18,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Utilizando o tempo livre para dominar a conversão de repositórios SVN para GIT",
-        "excerpt":"Planejar e fazer. (Imagem by Brett Jordan on Unsplash) No ambiente de trabalho ágil em que estou inserido, surgiram momentos entre as sprints em que me vi sem tarefas imediatas. Ao invés de deixar esse tempo ocioso passar despercebido, decidi aproveitá-lo de maneira produtiva. Como profissional comprometido com meu crescimento...","categories": ["pt-br"],
+        "excerpt":"Planejar e fazer. (Imagem by Brett Jordan on Unsplash) No ambiente de trabalho ágil em que estou inserido, surgiram momentos entre as sprints em que me vi sem tarefas imediatas. Ao invés de deixar esse tempo ocioso passar despercebido, decidi aproveitá-lo de maneira produtiva. Como profissional comprometido com meu crescimento...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/dominando-a-conversao-de-repositorios-SVN-para-GIT/",
         "teaser": null
@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Conversão de repositório SVN para GIT: um guia prático",
-        "excerpt":"Conversão de gerenciadores de código. (imagem por DALL-E) A conversão de um repositório SVN para um repositório GIT é um processo que envolve a migração dos dados, da estrutura e do histórico de um sistema de controle de versão para outro. No artigo anterior abordei a minha pesquisa e aprofundamento...","categories": ["pt-br"],
+        "excerpt":"Conversão de gerenciadores de código. (imagem por DALL-E) A conversão de um repositório SVN para um repositório GIT é um processo que envolve a migração dos dados, da estrutura e do histórico de um sistema de controle de versão para outro. No artigo anterior abordei a minha pesquisa e aprofundamento...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/o-guia-da-conversao-de-GIT-para-SVN/",
         "teaser": null
@@ -42,7 +42,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Commit com propósito: como padronizar e facilitar a documentação do seu projeto",
-        "excerpt":"Padronizar a documentação do projeto. (imagem por DALL-E) Estou fazendo parte de um processo que começou com a pesquisa e aplicação da conversão de repositórios SVN para GIT. Isso demonstra o nosso profissionalismo e o nosso compromisso com os padrões e boas práticas da nossa área. Bom, não sei se...","categories": ["pt-br"],
+        "excerpt":"Padronizar a documentação do projeto. (imagem por DALL-E) Estou fazendo parte de um processo que começou com a pesquisa e aplicação da conversão de repositórios SVN para GIT. Isso demonstra o nosso profissionalismo e o nosso compromisso com os padrões e boas práticas da nossa área. Bom, não sei se...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/padronizar-e-facilitar-a-documentacao-de-projetos/",
         "teaser": null
@@ -54,7 +54,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Escolhendo a estratégia de branching git ideal para seu projeto",
-        "excerpt":"Ramificação (imagem por Talashuk na Unsplash) O Git é o sistema de controle de versão padrão no desenvolvimento de software moderno. Com a capacidade de rastreio de mudanças e de facilitar a colaboração entre equipes o Git permite que versões do código-fonte coexistam, possibilitando o trabalho em paralelo e a...","categories": ["pt-br"],
+        "excerpt":"Ramificação (imagem por Talashuk na Unsplash) O Git é o sistema de controle de versão padrão no desenvolvimento de software moderno. Com a capacidade de rastreio de mudanças e de facilitar a colaboração entre equipes o Git permite que versões do código-fonte coexistam, possibilitando o trabalho em paralelo e a...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/estrategias-de-branching-para-seu-projeto/",
         "teaser": null
@@ -66,7 +66,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Como reagi a um ataque de Supply Chain antes que ele afetasse meu projeto",
-        "excerpt":"Se você trabalha com o ecossistema moderno de JavaScript/TypeScript, há uma grande chance de você usar alguma biblioteca do TanStack. Seja o onipresente TanStack Query (antigo React Query), o Table ou o novo React Router. Eles estão em quase tudo. O ataque E o dia 11 de maio de 2026...","categories": ["pt-br"],
+        "excerpt":"Se você trabalha com o ecossistema moderno de JavaScript/TypeScript, há uma grande chance de você usar alguma biblioteca do TanStack. Seja o onipresente TanStack Query (antigo React Query), o Table ou o novo React Router. Eles estão em quase tudo. O ataque E o dia 11 de maio de 2026...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/reacao-ao-ataque-de-suply-chain-do-tanstack-cve-2026/",
         "teaser": null
@@ -78,7 +78,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Git Fluid Flow: Uma Estratégia de Branching para Entregas Desacopladas",
-        "excerpt":"Uma Estratégia de Branching para Entregas Desacopladas Introdução Admitamos o seguite cenário: A funcionalidade A está pronta para produção. A funcionalidade B ainda possui bugs identificados pelo QA. A funcionalidade C aguarda aprovação do cliente em homologação. Apesar disso, todas fazem parte do mesmo ciclo de promoção entre ambientes. Como...","categories": ["pt-br"],
+        "excerpt":"Uma Estratégia de Branching para Entregas Desacopladas Introdução Admitamos o seguite cenário: A funcionalidade A está pronta para produção. A funcionalidade B ainda possui bugs identificados pelo QA. A funcionalidade C aguarda aprovação do cliente em homologação. Apesar disso, todas fazem parte do mesmo ciclo de promoção entre ambientes. Como...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/estrategia-de-branching-git-fluid-flow/",
         "teaser": null
