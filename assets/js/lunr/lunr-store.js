@@ -82,4 +82,16 @@ var store = [{
         "tags": [],
         "url": "/blog/estrategia-de-branching-git-fluid-flow/",
         "teaser": null
+      },{
+        "title": "Agents Override: Local Harness in Heterogeneous Teams",
+        "excerpt":"agents.md file overrides local harness Introduction The adoption of AI assistants directly in IDEs has changed the way we write software. Today, establishing an agents.md file in the root of the repository so that the artificial intelligence understands the rules is practically a standard. This concept has spread under various...","categories": ["en"],
+        "tags": [],
+        "url": "/blog/agents-override-local-harness-in-heterogeneous-teams/",
+        "teaser": null
+      },{
+        "title": "Agents Override: Harness Local em Equipes Heterogêneas",
+        "excerpt":"agents.md file overrides local harness Introdução A adoção de assistentes de IA diretamente nas IDEs mudou a forma como escrevemos software. Hoje, é padrão estabelecer um arquivo agents.md na raiz do repositório para que a inteligência artificial entenda as regras. Esse conceito tem se espalhado sob diversos nomes: .cursorrules, .windsurfrules...","categories": ["pt-BR"],
+        "tags": [],
+        "url": "/blog/agents-override-harness-local-em-equipes-heterogeneas/",
+        "teaser": null
       }]

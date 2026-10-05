@@ -1,0 +1,846 @@
+
+
+<!doctype html>
+
+<html lang="en-US" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Agents Override: Local Harness in Heterogeneous Teams - Santana Software Architect Blog</title>
+<meta name="description" content="How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer’s local configurations.">
+
+
+  <meta name="author" content="Vinicius de Santana">
+  
+  <meta property="article:author" content="Vinicius de Santana">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Santana Software Architect Blog">
+<meta property="og:title" content="Agents Override: Local Harness in Heterogeneous Teams">
+<meta property="og:url" content="https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/">
+
+
+  <meta property="og:description" content="How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer’s local configurations.">
+
+
+
+  <meta property="og:image" content="https://viniciusvts.github.io/assets/img/logo.jpg">
+  
+    <meta property="og:image:alt" content="Santana Soluções Web Logo">
+  
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-10-05T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Santana Software Architect Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- begin _includes/head/custom.html -->
+<!-- Google tag (gtag.js) -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ06TDV570"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JQ06TDV570');
+</script>
+
+<!-- Render hreflang alternate links for posts that have a translation_keyend -->
+
+  
+  
+    
+      <link rel="alternate" hreflang="pt-BR" href="https://viniciusvts.github.io/blog/agents-override-harness-local-em-equipes-heterogeneas/" />
+    
+  
+    
+      <link rel="alternate" hreflang="en" href="https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/" />
+    
+  
+  
+  
+  
+    <link rel="alternate" hreflang="x-default" href="https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/" />
+  
+
+<!--end _includes/head/custom.html -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.jpg" alt="Santana Software Architect Blog"></a>
+        
+        <a class="site-title" href="/">
+          Santana Software Architect Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Posts</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color: #434851; background-image: url('');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Agents Override: Local Harness in Heterogeneous Teams
+
+        
+      </h1>
+      
+        <p class="page__lead">How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer’s local configurations.
+</p>
+      
+      
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-10-05T00:00:00+00:00">October 5, 2026</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+
+    
+      
+      
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          
+            
+              
+                
+                <a href="/blog/agents-override-harness-local-em-equipes-heterogeneas/">
+                  Português
+                </a>
+              
+            
+          
+        </span>
+      
+    
+
+  </p>
+
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+  
+    
+
+
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Agents Override: Local Harness in Heterogeneous Teams</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Agents Override: Local Harness in Heterogeneous Teams">
+    <meta itemprop="description" content="How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer’s local configurations.">
+    <meta itemprop="datePublished" content="2026-10-05T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-list"></i> On this article</h4></header>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#the-architectural-solution-the-local-override-pattern">The Architectural Solution: The “Local Override” Pattern</a></li><li><a href="#use-cases-far-beyond-infrastructure">Use Cases: Far Beyond Infrastructure</a></li><li><a href="#practical-implementation-guide">Practical Implementation Guide</a></li><li><a href="#conclusion-scaling-ai-with-governance">Conclusion: Scaling AI with Governance</a></li></ul>
+            </nav>
+          </aside>
+        
+        <figure class=""><img src="/assets/images/agents-override-local-harness.jpg" alt="agents.md file overrides local harness" /><figcaption>
+      agents.md file overrides local harness
+
+    </figcaption></figure>
+
+<h2 id="introduction">Introduction</h2>
+<p>The adoption of AI assistants directly in IDEs has changed the way we write software. Today, establishing an <code class="language-plaintext highlighter-rouge">agents.md</code> file in the root of the repository so that the artificial intelligence understands the rules is practically a standard. This concept has spread under various names: <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>. However, as its use moves from the solo developer and scales to heterogeneous teams, a problem arises: infrastructure friction.</p>
+
+<p>Reason: mixing business rule or architectural instructions with commands restricted to the local infrastructure of whoever wrote the original prompt.</p>
+
+<p>The central thesis is simple: <strong>AI instructions must not mix the software’s business or architectural rules with the developer’s local infrastructure commands.</strong></p>
+
+<h2 id="the-architectural-solution-the-local-override-pattern">The Architectural Solution: The “Local Override” Pattern</h2>
+<p>In the same way that software engineering solved the problem of database credentials and environment variables with the famous .env files, we need to apply the concept of a local override to the context of AI agents.</p>
+
+<p>The separation of concerns here is clear: the repository must dictate the business rule, while the developer’s machine dictates the execution rule.</p>
+
+<ul>
+  <li><strong>The Global Layer (<code class="language-plaintext highlighter-rouge">agents.md</code>)</strong>: This is the main file, versioned in Git. It contains the team’s technical conventions. This is where you explain that the backend runs on a specific language and framework, how the interface is built, and what design principles the system strictly obeys. These are the immutable “laws” of the project, valid for everyone.</li>
+  <li><strong>The Local Layer (<code class="language-plaintext highlighter-rouge">agents.local.md</code>)</strong>: This is the file that must necessarily be added to .gitignore. It belongs solely and exclusively to the developer’s machine. Here lie the personal idiosyncrasies and preferences: whether the developer operates natively on Windows, runs everything virtualized in Docker containers, or prefers WSL2 with a Linux distribution as their environment of choice.</li>
+</ul>
+
+<h2 id="use-cases-far-beyond-infrastructure">Use Cases: Far Beyond Infrastructure</h2>
+<p>Adopting this layered pattern allows the team to truly harness all the capabilities of AI tools, extracting maximum productivity without constraining or breaking colleagues’ workflows. The <code class="language-plaintext highlighter-rouge">agents.local.md</code> serves to shape the entire individual experience:</p>
+
+<ul>
+  <li>
+    <p><strong>Execution and Terminal</strong>: While one developer might instruct the AI to always run migration commands through isolated Docker containers, another directs the tool to use native executables and bash-based paths from their WSL2.</p>
+  </li>
+  <li>
+    <p><strong>Local Tool Integration</strong>: If you integrate open-source engines running on your own machine, you can include the following rule in your isolated file: “Whenever you need to analyze massive blocks of local logs, route the call to my local Ollama model instead of consuming cloud token quotas.”</p>
+  </li>
+  <li>
+    <p><strong>Verbosity and Formatting</strong>: You can configure the local file to ask the AI to never explain the code, returning only the raw diff directly, if that is your preferred review pace.</p>
+  </li>
+</ul>
+
+<h2 id="practical-implementation-guide">Practical Implementation Guide</h2>
+<p>To establish this governance pattern in your next project, implementation is straightforward and requires three simple steps:</p>
+
+<ol>
+  <li>In your <code class="language-plaintext highlighter-rouge">.gitignore</code>, add the exclusion rule:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># AI Agents Local Overrides
+agents.local.md
+</code></pre></div></div>
+
+<ol>
+  <li>In <code class="language-plaintext highlighter-rouge">agents.md</code> (the versioned Global file), add the reading anchor:</li>
+</ol>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Project Rules</span>
+<span class="p">-</span> We use PHP with Laravel and a Vue.js interface.
+<span class="p">-</span> Architecture based on Domain-Driven Design (DDD).
+
+<span class="gu">## Local Environment Setup [IMPORTANT]</span>
+Always silently check for the existence of a file named <span class="sb">`agents.local.md`</span> in the root of this repository before suggesting or executing any terminal command. If the file exists, its execution instructions, directory paths, and preferences MUST override the default behavior.
+</code></pre></div></div>
+
+<ol>
+  <li>In <code class="language-plaintext highlighter-rouge">agents.local.md</code> (the unversioned Local file), create your profile:</li>
+</ol>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Execution Environment: I use WSL2 (Linux).
+<span class="p">-</span> Commands: All commands must assume Linux paths. Do not use PowerShell commands or syntax.
+<span class="p">-</span> Verbosity: Be extremely objective, return only the altered code blocks.
+</code></pre></div></div>
+
+<h2 id="conclusion-scaling-ai-with-governance">Conclusion: Scaling AI with Governance</h2>
+<p>True maturity in the adoption of artificial intelligence by development teams does not lie in trying to create a single, flawless “super-prompt” that foresees every scenario. The answer lies in creating a natively flexible context architecture.</p>
+
+<p>Whether your team uses <code class="language-plaintext highlighter-rouge">agents.md</code>, <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>, the fundamental principle of “separation of concerns” must prevail. By isolating what is universal to the project from what is specific to the machine, we eliminate team friction, prevent AI from breaking colleagues’ terminals, and ensure this technology acts exclusively as a productivity multiplier.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-10-05T00:00:00+00:00">October 5, 2026</time></p>
+
+
+      </footer>
+
+      
+<section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=Agents+Override%3A+Local+Harness+in+Heterogeneous+Teams%20https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fagents-override-local-harness-in-heterogeneous-teams%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fagents-override-local-harness-in-heterogeneous-teams%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Agents+Override%3A+Local+Harness+in+Heterogeneous+Teams%20https%3A%2F%2Fviniciusvts.github.io%2Fblog%2Fagents-override-local-harness-in-heterogeneous-teams%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/blog/estrategia-de-branching-git-fluid-flow/" class="pagination--pager" title="Git Fluid Flow: Uma Estratégia de Branching para Entregas Desacopladas">Previous</a>
+    
+    
+      <a href="/blog/agents-override-harness-local-em-equipes-heterogeneas/" class="pagination--pager" title="Agents Override: Harness Local em Equipes Heterogêneas">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+      
+        
+<div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section class="fb-comments" data-href="https://viniciusvts.github.io/blog/agents-override-local-harness-in-heterogeneous-teams/" data-mobile="true" data-num-posts="5" data-width="100%" data-colorscheme="dark"></section>
+    
+</div>
+
+      
+    
+  </article>
+
+  
+  
+    
+
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/agents-override-harness-local-em-equipes-heterogeneas/" rel="permalink">Agents Override: Harness Local em Equipes Heterogêneas
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-10-05T00:00:00+00:00">October 5, 2026</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+
+    
+      
+      
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          
+            
+              
+                
+                <a href="/blog/agents-override-local-harness-in-heterogeneous-teams/">
+                  English
+                </a>
+              
+            
+          
+        </span>
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Como usar Agents Override no Harness resolve o atrito de ambientes mistos no uso de IA em equipes, separando as regras globais do projeto das configurações l...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/estrategia-de-branching-git-fluid-flow/" rel="permalink">Git Fluid Flow: Uma Estratégia de Branching para Entregas Desacopladas
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-06-15T00:00:00+00:00">June 15, 2026</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          19 minute read
+        
+      </span>
+    
+
+    
+      
+      
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          
+            
+              
+                
+                <a href="/blog/git-fluid-flow-branching-strategy/">
+                  English
+                </a>
+              
+            
+          
+        </span>
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Frustrado com entregas bloqueadas por causa de ambientes? Conheça o Fluid Flow, uma estratégia de branching focada em entregas desacopladas e tarefas indepen...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/git-fluid-flow-branching-strategy/" rel="permalink">Git Fluid Flow: A Branching Strategy for Decoupled Task Promotion
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-06-15T00:00:00+00:00">June 15, 2026</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          18 minute read
+        
+      </span>
+    
+
+    
+      
+      
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          
+            
+              
+                
+                <a href="/blog/estrategia-de-branching-git-fluid-flow/">
+                  Português
+                </a>
+              
+            
+          
+        </span>
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Tired of ready-to-ship tasks being blocked by unrelated work? Meet Fluid Flow, a branching strategy designed around decoupled task promotion and independent ...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/blog/reacao-ao-ataque-de-suply-chain-do-tanstack-cve-2026/" rel="permalink">Como reagi a um ataque de Supply Chain antes que ele afetasse meu projeto
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2026-05-18T00:00:00+00:00">May 18, 2026</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+
+    
+      
+      
+        <span class="page__meta-sep"></span>
+        <span>
+          <i class="fa-solid fa-language" aria-hidden="true"></i>
+          Read in 
+          
+            
+              
+                
+                <a href="/blog/reaction-to-the-tanstack-suply-chain-attack-cve-2026/">
+                  English
+                </a>
+              
+            
+          
+        </span>
+      
+    
+
+  </p>
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">Neste artigo, quero compartilhar o passo a passo de como reagi assim que recebi a notícia, o que verifiquei para garantir que nossos sistemas estavam seguros...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        
+<div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://linkedin.com/in/viniciusvts" rel="nofollow noopener noreferrer nofollow"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://github.com/viniciusvts" rel="nofollow noopener noreferrer nofollow"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2020 - 2026 <a href="https://viniciusvts.github.io">Santana Software Architect Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+
+
+
+
+  </body>
+</html>
