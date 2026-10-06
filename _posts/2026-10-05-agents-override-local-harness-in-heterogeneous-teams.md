@@ -37,14 +37,14 @@ With Agents Override, each developer can tune their own harness to the way they 
 ## Practical Implementation Guide
 To establish this governance pattern in your next project, implementation is straightforward and requires three simple steps:
 
-1. In your `.gitignore`, add the exclusion rule:
+1 - In your `.gitignore`, add the exclusion rule:
 
 ```
 # AI Agents Local Overrides
 agents.local.md
 ``` 
 
-2. In `agents.md` (the versioned Global file), add an instruction pointing to the local file:
+2 - In `agents.md` (the versioned Global file), add an instruction pointing to the local file:
 
 ```md
 ## Project Rules
@@ -55,7 +55,7 @@ agents.local.md
 At the start of each session, check whether a file named `agents.local.md` exists in the root of this repository and, if it does, read it. His instructions regarding access to external tools, the execution environment, directory paths, user confirmations, terminal commands, the use of MCPs, and response style **MUST override** the default behavior of this file and the skills.
 ```
 
-3. In `agents.local.md` (the unversioned Local file), create your profile:
+3 - In `agents.local.md` (the unversioned Local file), create your profile:
 
 ```md
 - Execution Environment: I use WSL2 (Linux).

@@ -32,14 +32,14 @@ Com o Agents Override, cada desenvolvedor ajusta o próprio harness ao seu jeito
 ## Guia Prático de Implementação
 Para estabelecer esse padrão de governança no seu próximo projeto, a implementação é direta e requer três passos simples:
 
-1. No seu `.gitignore`, adicione a regra de exclusão:
+1 - No seu `.gitignore`, adicione a regra de exclusão:
 
 ```
 # AI Agents Local Overrides
 agents.local.md
 ```
 
-2. No `agents.md` (o arquivo Global versionado), adicione uma instrução apontando para o arquivo local:
+2 - No `agents.md` (o arquivo Global versionado), adicione uma instrução apontando para o arquivo local:
 
 ```md
 ## Regras do Projeto
@@ -47,7 +47,7 @@ agents.local.md
 - Arquitetura baseada em Domain-Driven Design (DDD).
 
 ## Setup de Ambiente Local [IMPORTANTE]
-No início de cada sessão, verifique a existência de `agents.local.md` na raiz deste repositório e, se existir, leia-o. As instruções dele sobre acessar ferramentas externas, ambiente de execução, caminhos de diretório, confirmações do usuário, comandos de terminal, uso de MCPs e estilo de resposta **DEVEM sobrescrever** o comportamento padrão deste arquivo e das skills.
+No início de cada sessão, verifique a existência de `agents.local.md` na raiz deste repositório e, se existir, leia-o - As instruções dele sobre acessar ferramentas externas, ambiente de execução, caminhos de diretório, confirmações do usuário, comandos de terminal, uso de MCPs e estilo de resposta **DEVEM sobrescrever** o comportamento padrão deste arquivo e das skills.
 ```
 
 3. No `agents.local.md` (o arquivo Local não versionado), crie seu perfil:
