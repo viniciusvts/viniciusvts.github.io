@@ -354,24 +354,20 @@
 <h2 id="guia-prático-de-implementação">Guia Prático de Implementação</h2>
 <p>Para estabelecer esse padrão de governança no seu próximo projeto, a implementação é direta e requer três passos simples:</p>
 
-<ol>
-  <li>No seu <code class="language-plaintext highlighter-rouge">.gitignore</code>, adicione a regra de exclusão:</li>
-</ol>
+<p>1 - No seu <code class="language-plaintext highlighter-rouge">.gitignore</code>, adicione a regra de exclusão:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># AI Agents Local Overrides
 agents.local.md
 </code></pre></div></div>
 
-<ol>
-  <li>No <code class="language-plaintext highlighter-rouge">agents.md</code> (o arquivo Global versionado), adicione uma instrução apontando para o arquivo local:</li>
-</ol>
+<p>2 - No <code class="language-plaintext highlighter-rouge">agents.md</code> (o arquivo Global versionado), adicione uma instrução apontando para o arquivo local:</p>
 
 <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Regras do Projeto</span>
 <span class="p">-</span> Utilizamos PHP com Laravel e interface em Vue.js.
 <span class="p">-</span> Arquitetura baseada em Domain-Driven Design (DDD).
 
 <span class="gu">## Setup de Ambiente Local [IMPORTANTE]</span>
-No início de cada sessão, verifique a existência de <span class="sb">`agents.local.md`</span> na raiz deste repositório e, se existir, leia-o. As instruções dele sobre acessar ferramentas externas, ambiente de execução, caminhos de diretório, confirmações do usuário, comandos de terminal, uso de MCPs e estilo de resposta <span class="gs">**DEVEM sobrescrever**</span> o comportamento padrão deste arquivo e das skills.
+No início de cada sessão, verifique a existência de <span class="sb">`agents.local.md`</span> na raiz deste repositório e, se existir, leia-o - As instruções dele sobre acessar ferramentas externas, ambiente de execução, caminhos de diretório, confirmações do usuário, comandos de terminal, uso de MCPs e estilo de resposta <span class="gs">**DEVEM sobrescrever**</span> o comportamento padrão deste arquivo e das skills.
 </code></pre></div></div>
 
 <ol>
@@ -505,7 +501,7 @@ No início de cada sessão, verifique a existência de <span class="sb">`agents.
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     

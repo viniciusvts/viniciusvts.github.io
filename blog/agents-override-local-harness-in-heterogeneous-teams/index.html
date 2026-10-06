@@ -219,7 +219,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     
@@ -360,17 +360,13 @@
 <h2 id="practical-implementation-guide">Practical Implementation Guide</h2>
 <p>To establish this governance pattern in your next project, implementation is straightforward and requires three simple steps:</p>
 
-<ol>
-  <li>In your <code class="language-plaintext highlighter-rouge">.gitignore</code>, add the exclusion rule:</li>
-</ol>
+<p>1 - In your <code class="language-plaintext highlighter-rouge">.gitignore</code>, add the exclusion rule:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># AI Agents Local Overrides
 agents.local.md
 </code></pre></div></div>
 
-<ol>
-  <li>In <code class="language-plaintext highlighter-rouge">agents.md</code> (the versioned Global file), add an instruction pointing to the local file:</li>
-</ol>
+<p>2 - In <code class="language-plaintext highlighter-rouge">agents.md</code> (the versioned Global file), add an instruction pointing to the local file:</p>
 
 <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Project Rules</span>
 <span class="p">-</span> We use PHP with Laravel and a Vue.js interface.
@@ -380,9 +376,7 @@ agents.local.md
 At the start of each session, check whether a file named <span class="sb">`agents.local.md`</span> exists in the root of this repository and, if it does, read it. His instructions regarding access to external tools, the execution environment, directory paths, user confirmations, terminal commands, the use of MCPs, and response style <span class="gs">**MUST override**</span> the default behavior of this file and the skills.
 </code></pre></div></div>
 
-<ol>
-  <li>In <code class="language-plaintext highlighter-rouge">agents.local.md</code> (the unversioned Local file), create your profile:</li>
-</ol>
+<p>3 - In <code class="language-plaintext highlighter-rouge">agents.local.md</code> (the unversioned Local file), create your profile:</p>
 
 <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Execution Environment: I use WSL2 (Linux).
 <span class="p">-</span> Commands: All commands must assume Linux paths. Do not use PowerShell commands or syntax.
