@@ -1,29 +1,31 @@
 ---
 title: "Agents Override: Local Harness in Heterogeneous Teams"
 excerpt: "How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer's local configurations."
+last_modified_at: 2026-10-06
 translation_key: agents-override-local-harness
 ---
 
-{% include figure popup=false image_path="/assets/images/agents-override-local-harness.jpg" alt="agents.md file overrides local harness" caption="agents.md file overrides local harness" %}
+{% include figure popup=false image_path="/assets/images/agents-override-local-harness.jpg" alt="agents.local.md overriding agents.md" caption="agents.local.md overrides agents.md for the local environment" %}
 
 ## Introduction
-The adoption of AI assistants directly in IDEs has changed the way we write software. Today, establishing an `agents.md` file in the root of the repository so that the artificial intelligence understands the rules is practically a standard. This concept has spread under various names: `.cursorrules`, `.windsurfrules`, or `claude.md`. However, as its use moves from the solo developer and scales to heterogeneous teams, a problem arises: infrastructure friction.
+The adoption of AI assistants directly in IDEs has changed the way we write software. Each of them runs inside a harness: the layer around the model that defines which tools it can use, which instructions it gets, and what context it works in. One of the simplest pieces of that harness has become common practice: an `agents.md` file in the root of the repository so that the artificial intelligence understands the rules. Depending on the tool, the same idea goes by other names: `.cursorrules`, `.windsurfrules`, or `claude.md`.
 
-Reason: mixing business rule or architectural instructions with commands restricted to the local infrastructure of whoever wrote the original prompt.
+This works well for solo developers; however, as usage moves beyond the individual developer and scales to diverse teams, the problem of infrastructure friction arises. The person who wrote the file often mixes project rules with instructions that only make sense on their own machine. If that person uses Docker, the file instructs the agent to run everything via `docker compose exec`. A colleague using native Windows or WSL2 receives commands that simply do not work in their environment.
 
-The central thesis is simple: **AI instructions must not mix the software's business or architectural rules with the developer's local infrastructure commands.**
 
-## The Architectural Solution: The "Local Override" Pattern
-In the same way that software engineering solved the problem of database credentials and environment variables with the famous .env files, we need to apply the concept of a local override to the context of AI agents.
+So here's my point: **AI instructions must not mix the software's business or architectural rules with the developer's local infrastructure commands.**
 
-The separation of concerns here is clear: the repository must dictate the business rule, while the developer's machine dictates the execution rule.
+## The Architectural Solution: The "Agents Override" Pattern
+In the same way that software engineering solved the problem of database credentials and environment variables with `.env` files, we need to apply the concept of a local override to the context of AI agents.
 
-- **The Global Layer (`agents.md`)**: This is the main file, versioned in Git. It contains the team's technical conventions. This is where you explain that the backend runs on a specific language and framework, how the interface is built, and what design principles the system strictly obeys. These are the immutable "laws" of the project, valid for everyone.
-- **The Local Layer (`agents.local.md`)**: This is the file that must necessarily be added to .gitignore. It belongs solely and exclusively to the developer's machine. Here lie the personal idiosyncrasies and preferences: whether the developer operates natively on Windows, runs everything virtualized in Docker containers, or prefers WSL2 with a Linux distribution as their environment of choice.
+The separation of concerns here is here: the repository must dictate the business rule, while the developer's machine dictates the execution rule.
+
+- **The Global Layer (`agents.md`)**: This is the main file, versioned in Git. It contains the team's technical conventions. This is where you explain that the backend runs on a specific language and framework, how the interface is built, and what design principles the system strictly obeys. These rules are valid for everyone.
+- **The Local Layer (`agents.local.md`)**: This is the file that must necessarily be added to `.gitignore`. It belongs solely and exclusively to the developer's machine and describes your local harness. If the developer operates natively on Windows, runs everything virtualized in Docker containers, or prefers WSL2 with a Linux distribution, plus your personal preferences.
 
 
 ## Use Cases: Far Beyond Infrastructure
-Adopting this layered pattern allows the team to truly harness all the capabilities of AI tools, extracting maximum productivity without constraining or breaking colleagues' workflows. The `agents.local.md` serves to shape the entire individual experience:
+With Agents Override, each developer can tune their own harness to the way they work without imposing it on the rest of the team. Infrastructure is the obvious case, but not the only one:
 
 - **Execution and Terminal**: While one developer might instruct the AI to always run migration commands through isolated Docker containers, another directs the tool to use native executables and bash-based paths from their WSL2.
 
@@ -42,7 +44,7 @@ To establish this governance pattern in your next project, implementation is str
 agents.local.md
 ``` 
 
-2. In `agents.md` (the versioned Global file), add the reading anchor:
+2. In `agents.md` (the versioned Global file), add an instruction pointing to the local file:
 
 ```md
 ## Project Rules
@@ -50,7 +52,7 @@ agents.local.md
 - Architecture based on Domain-Driven Design (DDD).
 
 ## Local Environment Setup [IMPORTANT]
-Always silently check for the existence of a file named `agents.local.md` in the root of this repository before suggesting or executing any terminal command. If the file exists, its execution instructions, directory paths, and preferences MUST override the default behavior.
+At the start of each session, check whether a file named `agents.local.md` exists in the root of this repository and, if it does, read it. His instructions regarding access to external tools, the execution environment, directory paths, user confirmations, terminal commands, the use of MCPs, and response style **MUST override** the default behavior of this file and the skills.
 ```
 
 3. In `agents.local.md` (the unversioned Local file), create your profile:
@@ -62,6 +64,6 @@ Always silently check for the existence of a file named `agents.local.md` in the
 ```
 
 ## Conclusion: Scaling AI with Governance
-True maturity in the adoption of artificial intelligence by development teams does not lie in trying to create a single, flawless "super-prompt" that foresees every scenario. The answer lies in creating a natively flexible context architecture.
+No single prompt will cover every developer's environment, and trying to write one only makes the file longer and more fragile. Splitting the context into layers works better, and that's what Agents Override proposes: what belongs to the project goes in the repository, what belongs to your local harness stays on your machine.
 
-Whether your team uses `agents.md`, `.cursorrules`, `.windsurfrules`, or `claude.md`, the fundamental principle of "separation of concerns" must prevail. By isolating what is universal to the project from what is specific to the machine, we eliminate team friction, prevent AI from breaking colleagues' terminals, and ensure this technology acts exclusively as a productivity multiplier.
+Whether your team uses `agents.md`, `.cursorrules`, `.windsurfrules`, or `claude.md`, the principle of "separation of concerns" must prevail. By isolating what is universal to the project from what is specific to the machine, we eliminate team friction, prevent AI from breaking colleagues' terminals, and ensure this technology acts exclusively as a productivity multiplier.
