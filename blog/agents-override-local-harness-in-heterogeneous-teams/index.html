@@ -44,6 +44,8 @@
 
 
 
+  <meta property="article:modified_time" content="2026-10-06T00:00:00+00:00">
+
 
 
 
@@ -304,7 +306,7 @@
     <meta itemprop="headline" content="Agents Override: Local Harness in Heterogeneous Teams">
     <meta itemprop="description" content="How to use Agents Override in Harness solves the friction of mixed environments in AI usage in teams, separating global project rules from each developer’s local configurations.">
     <meta itemprop="datePublished" content="2026-10-05T00:00:00+00:00">
-    
+    <meta itemprop="dateModified" content="2026-10-06T00:00:00+00:00">
 
     <div class="page__inner-wrap">
       
@@ -314,34 +316,34 @@
           <aside class="sidebar__right sticky">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-list"></i> On this article</h4></header>
-              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#the-architectural-solution-the-local-override-pattern">The Architectural Solution: The “Local Override” Pattern</a></li><li><a href="#use-cases-far-beyond-infrastructure">Use Cases: Far Beyond Infrastructure</a></li><li><a href="#practical-implementation-guide">Practical Implementation Guide</a></li><li><a href="#conclusion-scaling-ai-with-governance">Conclusion: Scaling AI with Governance</a></li></ul>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#the-architectural-solution-the-agents-override-pattern">The Architectural Solution: The “Agents Override” Pattern</a></li><li><a href="#use-cases-far-beyond-infrastructure">Use Cases: Far Beyond Infrastructure</a></li><li><a href="#practical-implementation-guide">Practical Implementation Guide</a></li><li><a href="#conclusion-scaling-ai-with-governance">Conclusion: Scaling AI with Governance</a></li></ul>
             </nav>
           </aside>
         
-        <figure class=""><img src="/assets/images/agents-override-local-harness.jpg" alt="agents.md file overrides local harness" /><figcaption>
-      agents.md file overrides local harness
+        <figure class=""><img src="/assets/images/agents-override-local-harness.jpg" alt="agents.local.md overriding agents.md" /><figcaption>
+      agents.local.md overrides agents.md for the local environment
 
     </figcaption></figure>
 
 <h2 id="introduction">Introduction</h2>
-<p>The adoption of AI assistants directly in IDEs has changed the way we write software. Today, establishing an <code class="language-plaintext highlighter-rouge">agents.md</code> file in the root of the repository so that the artificial intelligence understands the rules is practically a standard. This concept has spread under various names: <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>. However, as its use moves from the solo developer and scales to heterogeneous teams, a problem arises: infrastructure friction.</p>
+<p>The adoption of AI assistants directly in IDEs has changed the way we write software. Each of them runs inside a harness: the layer around the model that defines which tools it can use, which instructions it gets, and what context it works in. One of the simplest pieces of that harness has become common practice: an <code class="language-plaintext highlighter-rouge">agents.md</code> file in the root of the repository so that the artificial intelligence understands the rules. Depending on the tool, the same idea goes by other names: <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>.</p>
 
-<p>Reason: mixing business rule or architectural instructions with commands restricted to the local infrastructure of whoever wrote the original prompt.</p>
+<p>This works well for solo developers; however, as usage moves beyond the individual developer and scales to diverse teams, the problem of infrastructure friction arises. The person who wrote the file often mixes project rules with instructions that only make sense on their own machine. If that person uses Docker, the file instructs the agent to run everything via <code class="language-plaintext highlighter-rouge">docker compose exec</code>. A colleague using native Windows or WSL2 receives commands that simply do not work in their environment.</p>
 
-<p>The central thesis is simple: <strong>AI instructions must not mix the software’s business or architectural rules with the developer’s local infrastructure commands.</strong></p>
+<p>So here’s my point: <strong>AI instructions must not mix the software’s business or architectural rules with the developer’s local infrastructure commands.</strong></p>
 
-<h2 id="the-architectural-solution-the-local-override-pattern">The Architectural Solution: The “Local Override” Pattern</h2>
-<p>In the same way that software engineering solved the problem of database credentials and environment variables with the famous .env files, we need to apply the concept of a local override to the context of AI agents.</p>
+<h2 id="the-architectural-solution-the-agents-override-pattern">The Architectural Solution: The “Agents Override” Pattern</h2>
+<p>In the same way that software engineering solved the problem of database credentials and environment variables with <code class="language-plaintext highlighter-rouge">.env</code> files, we need to apply the concept of a local override to the context of AI agents.</p>
 
-<p>The separation of concerns here is clear: the repository must dictate the business rule, while the developer’s machine dictates the execution rule.</p>
+<p>The separation of concerns here is here: the repository must dictate the business rule, while the developer’s machine dictates the execution rule.</p>
 
 <ul>
-  <li><strong>The Global Layer (<code class="language-plaintext highlighter-rouge">agents.md</code>)</strong>: This is the main file, versioned in Git. It contains the team’s technical conventions. This is where you explain that the backend runs on a specific language and framework, how the interface is built, and what design principles the system strictly obeys. These are the immutable “laws” of the project, valid for everyone.</li>
-  <li><strong>The Local Layer (<code class="language-plaintext highlighter-rouge">agents.local.md</code>)</strong>: This is the file that must necessarily be added to .gitignore. It belongs solely and exclusively to the developer’s machine. Here lie the personal idiosyncrasies and preferences: whether the developer operates natively on Windows, runs everything virtualized in Docker containers, or prefers WSL2 with a Linux distribution as their environment of choice.</li>
+  <li><strong>The Global Layer (<code class="language-plaintext highlighter-rouge">agents.md</code>)</strong>: This is the main file, versioned in Git. It contains the team’s technical conventions. This is where you explain that the backend runs on a specific language and framework, how the interface is built, and what design principles the system strictly obeys. These rules are valid for everyone.</li>
+  <li><strong>The Local Layer (<code class="language-plaintext highlighter-rouge">agents.local.md</code>)</strong>: This is the file that must necessarily be added to <code class="language-plaintext highlighter-rouge">.gitignore</code>. It belongs solely and exclusively to the developer’s machine and describes your local harness. If the developer operates natively on Windows, runs everything virtualized in Docker containers, or prefers WSL2 with a Linux distribution, plus your personal preferences.</li>
 </ul>
 
 <h2 id="use-cases-far-beyond-infrastructure">Use Cases: Far Beyond Infrastructure</h2>
-<p>Adopting this layered pattern allows the team to truly harness all the capabilities of AI tools, extracting maximum productivity without constraining or breaking colleagues’ workflows. The <code class="language-plaintext highlighter-rouge">agents.local.md</code> serves to shape the entire individual experience:</p>
+<p>With Agents Override, each developer can tune their own harness to the way they work without imposing it on the rest of the team. Infrastructure is the obvious case, but not the only one:</p>
 
 <ul>
   <li>
@@ -367,7 +369,7 @@ agents.local.md
 </code></pre></div></div>
 
 <ol>
-  <li>In <code class="language-plaintext highlighter-rouge">agents.md</code> (the versioned Global file), add the reading anchor:</li>
+  <li>In <code class="language-plaintext highlighter-rouge">agents.md</code> (the versioned Global file), add an instruction pointing to the local file:</li>
 </ol>
 
 <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Project Rules</span>
@@ -375,7 +377,7 @@ agents.local.md
 <span class="p">-</span> Architecture based on Domain-Driven Design (DDD).
 
 <span class="gu">## Local Environment Setup [IMPORTANT]</span>
-Always silently check for the existence of a file named <span class="sb">`agents.local.md`</span> in the root of this repository before suggesting or executing any terminal command. If the file exists, its execution instructions, directory paths, and preferences MUST override the default behavior.
+At the start of each session, check whether a file named <span class="sb">`agents.local.md`</span> exists in the root of this repository and, if it does, read it. His instructions regarding access to external tools, the execution environment, directory paths, user confirmations, terminal commands, the use of MCPs, and response style <span class="gs">**MUST override**</span> the default behavior of this file and the skills.
 </code></pre></div></div>
 
 <ol>
@@ -388,9 +390,9 @@ Always silently check for the existence of a file named <span class="sb">`agents
 </code></pre></div></div>
 
 <h2 id="conclusion-scaling-ai-with-governance">Conclusion: Scaling AI with Governance</h2>
-<p>True maturity in the adoption of artificial intelligence by development teams does not lie in trying to create a single, flawless “super-prompt” that foresees every scenario. The answer lies in creating a natively flexible context architecture.</p>
+<p>No single prompt will cover every developer’s environment, and trying to write one only makes the file longer and more fragile. Splitting the context into layers works better, and that’s what Agents Override proposes: what belongs to the project goes in the repository, what belongs to your local harness stays on your machine.</p>
 
-<p>Whether your team uses <code class="language-plaintext highlighter-rouge">agents.md</code>, <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>, the fundamental principle of “separation of concerns” must prevail. By isolating what is universal to the project from what is specific to the machine, we eliminate team friction, prevent AI from breaking colleagues’ terminals, and ensure this technology acts exclusively as a productivity multiplier.</p>
+<p>Whether your team uses <code class="language-plaintext highlighter-rouge">agents.md</code>, <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code>, or <code class="language-plaintext highlighter-rouge">claude.md</code>, the principle of “separation of concerns” must prevail. By isolating what is universal to the project from what is specific to the machine, we eliminate team friction, prevent AI from breaking colleagues’ terminals, and ensure this technology acts exclusively as a productivity multiplier.</p>
 
         
       </section>
@@ -407,7 +409,7 @@ Always silently check for the existence of a file named <span class="sb">`agents
         
 
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-10-05T00:00:00+00:00">October 5, 2026</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-updated" datetime="2026-10-06">October 6, 2026</time></p>
 
 
       </footer>
@@ -509,7 +511,7 @@ Always silently check for the existence of a file named <span class="sb">`agents
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     

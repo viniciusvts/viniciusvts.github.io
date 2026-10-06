@@ -44,6 +44,8 @@
 
 
 
+  <meta property="article:modified_time" content="2026-10-06T00:00:00+00:00">
+
 
 
 
@@ -217,7 +219,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          4 minute read
         
       </span>
     
@@ -304,7 +306,7 @@
     <meta itemprop="headline" content="Agents Override: Harness Local em Equipes Heterogêneas">
     <meta itemprop="description" content="Como usar Agents Override no Harness resolve o atrito de ambientes mistos no uso de IA em equipes, separando as regras globais do projeto das configurações locais de cada desenvolvedor.">
     <meta itemprop="datePublished" content="2026-10-05T00:00:00+00:00">
-    
+    <meta itemprop="dateModified" content="2026-10-06T00:00:00+00:00">
 
     <div class="page__inner-wrap">
       
@@ -314,34 +316,34 @@
           <aside class="sidebar__right sticky">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-list"></i> On this article</h4></header>
-              <ul class="toc__menu"><li><a href="#introdução">Introdução</a></li><li><a href="#a-solução-arquitetural-o-padrão-local-override">A Solução Arquitetural: O Padrão “Local Override”</a></li><li><a href="#casos-de-uso-muito-além-da-infraestrutura">Casos de Uso: Muito Além da Infraestrutura</a></li><li><a href="#guia-prático-de-implementação">Guia Prático de Implementação</a></li><li><a href="#conclusão-escalando-a-ia-com-governança">Conclusão: Escalando a IA com Governança</a></li></ul>
+              <ul class="toc__menu"><li><a href="#introdução">Introdução</a></li><li><a href="#a-solução-arquitetural-o-padrão-agents-override">A Solução Arquitetural: O Padrão “Agents Override”</a></li><li><a href="#casos-de-uso-muito-além-da-infraestrutura">Casos de Uso: Muito Além da Infraestrutura</a></li><li><a href="#guia-prático-de-implementação">Guia Prático de Implementação</a></li><li><a href="#conclusão-escalando-a-ia-com-governança">Conclusão: Escalando a IA com Governança</a></li></ul>
             </nav>
           </aside>
         
-        <figure class=""><img src="/assets/images/agents-override-local-harness.jpg" alt="agents.md file overrides local harness" /><figcaption>
-      agents.md file overrides local harness
+        <figure class=""><img src="/assets/images/agents-override-local-harness.jpg" alt="agents.local.md sobrescrevendo o agents.md" /><figcaption>
+      agents.local.md sobrescreve o agents.md no ambiente local
 
     </figcaption></figure>
 
 <h2 id="introdução">Introdução</h2>
-<p>A adoção de assistentes de IA diretamente nas IDEs mudou a forma como escrevemos software. Hoje, é padrão estabelecer um arquivo <code class="language-plaintext highlighter-rouge">agents.md</code> na raiz do repositório para que a inteligência artificial entenda as regras. Esse conceito tem se espalhado sob diversos nomes: <code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code> ou <code class="language-plaintext highlighter-rouge">claude.md</code>. Porém, à medida que o uso sai do desenvolvedor solo e escala para equipes heterogêneas surge um problema: o atrito de infraestrutura.</p>
+<p>A adoção de assistentes de IA diretamente nas IDEs mudou a forma como escrevemos software. Cada um deles roda dentro de um harness: a camada em volta do modelo que define quais ferramentas ele usa, quais instruções recebe e em que contexto trabalha. Uma das peças mais simples desse harness virou prática comum: um arquivo <code class="language-plaintext highlighter-rouge">agents.md</code> na raiz do repositório para que a inteligência artificial entenda as regras. Dependendo da ferramenta, a mesma ideia aparece com outros nomes:<code class="language-plaintext highlighter-rouge">.cursorrules</code>, <code class="language-plaintext highlighter-rouge">.windsurfrules</code> ou <code class="language-plaintext highlighter-rouge">claude.md</code>.</p>
 
-<p>Motivo: Misturar instruções de regras de negócio ou arquitetura com comandos restritos à infraestrutura local de quem escreveu o prompt original.</p>
+<p>Para quem trabalha sozinho isso funciona bem, porém, à medida que o uso sai do desenvolvedor solo e escala para equipes heterogêneas surge o problema do atrito de infraestrutura. Quem escreveu o arquivo costuma misturar as regras do projeto com instruções que só fazem sentido na própria máquina. Se essa pessoa trabalha com Docker, o arquivo manda o agente rodar tudo via <code class="language-plaintext highlighter-rouge">docker compose exec</code>. O colega que usa Windows nativo, ou WSL2, recebe comandos que simplesmente não funcionam no ambiente dele.</p>
 
-<p>A tese central é simples: <strong>As instruções de IA não devem misturar as regras de negócio ou de arquitetura do software com os comandos de infraestrutura local do desenvolvedor.</strong></p>
+<p>O meu ponto é este:<strong>As instruções de IA não devem misturar as regras de negócio ou de arquitetura do software com os comandos de infraestrutura local do desenvolvedor.</strong></p>
 
-<h2 id="a-solução-arquitetural-o-padrão-local-override">A Solução Arquitetural: O Padrão “Local Override”</h2>
-<p>Da mesma forma que a engenharia de software resolveu o problema das credenciais de banco de dados e variáveis de ambiente com os famosos arquivos .env, precisamos aplicar o conceito de override (sobrescrita) local para o contexto dos agentes de IA.</p>
+<h2 id="a-solução-arquitetural-o-padrão-agents-override">A Solução Arquitetural: O Padrão “Agents Override”</h2>
+<p>Da mesma forma que a engenharia de software resolveu o problema das credenciais de banco de dados e variáveis de ambiente com os arquivos <code class="language-plaintext highlighter-rouge">.env</code>, precisamos aplicar o conceito de override (sobrescrita) local para o contexto dos agentes de IA.</p>
 
-<p>A separação de responsabilidades aqui é clara: o repositório deve ditar a regra de negócio, enquanto a máquina do desenvolvedor dita a regra de execução.</p>
+<p>A separação de responsabilidades aqui: o repositório deve ditar a regra de negócio, enquanto a máquina do desenvolvedor dita a regra de execução.</p>
 
 <ul>
-  <li><strong>A Camada Global (<code class="language-plaintext highlighter-rouge">agents.md</code>)</strong>: É o arquivo principal, versionado no Git. Ele contém as convenções técnicas da equipe. É aqui que você explica que o backend roda com uma linguagem, com um framework específico, como que a interface é construída e com que princípios o design do sistema obedece estritamente. São as “leis” imutáveis do projeto, válidas para todos.</li>
-  <li><strong>A Camada Local (<code class="language-plaintext highlighter-rouge">agents.local.md</code>)</strong>: É o arquivo que deve ser inserido obrigatoriamente no .gitignore. Ele pertence única e exclusivamente à máquina do desenvolvedor. Aqui ficam as idiossincrasias e preferências pessoais: se o desenvolvedor opera nativamente no Windows, se roda tudo virtualizado em containers Docker, ou se o ambiente de eleição é o WSL2 com uma distribuição Linux.</li>
+  <li><strong>A Camada Global (<code class="language-plaintext highlighter-rouge">agents.md</code>)</strong>: É o arquivo principal, versionado no Git. Ele contém as convenções técnicas da equipe. É aqui que você explica que o backend roda com uma linguagem, com um framework específico, como que a interface é construída e com que princípios o design do sistema obedece estritamente. Essas regras valem para todos.</li>
+  <li><strong>A Camada Local (<code class="language-plaintext highlighter-rouge">agents.local.md</code>)</strong>: É o arquivo que deve ser inserido obrigatoriamente no <code class="language-plaintext highlighter-rouge">.gitignore</code>. Ele pertence única e exclusivamente à máquina do desenvolvedor e descreve o seu harness local. Se o desenvolvedor opera nativamente no Windows, se roda tudo virtualizado em containers Docker, ou se o ambiente é o WSL2 com uma distribuição Linux.</li>
 </ul>
 
 <h2 id="casos-de-uso-muito-além-da-infraestrutura">Casos de Uso: Muito Além da Infraestrutura</h2>
-<p>Adotar esse padrão de camadas permite que a equipe consiga dar o verdadeiro harness em todas as capacidades das ferramentas de IA, extraindo o máximo de produtividade sem engessar ou quebrar o fluxo de trabalho dos colegas. O <code class="language-plaintext highlighter-rouge">agents.local.md</code> serve para moldar toda a experiência individual:</p>
+<p>Com o Agents Override, cada desenvolvedor ajusta o próprio harness ao seu jeito de trabalhar sem impor isso ao resto da equipe. Infraestrutura é o caso mais óbvio, mas não o único:</p>
 
 <ul>
   <li><strong>Execução e Terminal</strong>: Enquanto um desenvolvedor pode instruir a IA a sempre rodar os comandos de migração através de containers isolados no Docker, outro orienta a ferramenta a usar executáveis nativos e caminhos baseados em bash do seu WSL2.</li>
@@ -353,7 +355,7 @@
 <p>Para estabelecer esse padrão de governança no seu próximo projeto, a implementação é direta e requer três passos simples:</p>
 
 <ol>
-  <li>No seu .gitignore, adicione a regra de exclusão:</li>
+  <li>No seu <code class="language-plaintext highlighter-rouge">.gitignore</code>, adicione a regra de exclusão:</li>
 </ol>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># AI Agents Local Overrides
@@ -361,7 +363,7 @@ agents.local.md
 </code></pre></div></div>
 
 <ol>
-  <li>No <code class="language-plaintext highlighter-rouge">agents.md</code> (o arquivo Global versionado), adicione a âncora de leitura:</li>
+  <li>No <code class="language-plaintext highlighter-rouge">agents.md</code> (o arquivo Global versionado), adicione uma instrução apontando para o arquivo local:</li>
 </ol>
 
 <div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Regras do Projeto</span>
@@ -369,7 +371,7 @@ agents.local.md
 <span class="p">-</span> Arquitetura baseada em Domain-Driven Design (DDD).
 
 <span class="gu">## Setup de Ambiente Local [IMPORTANTE]</span>
-Sempre verifique silenciosamente a existência de um arquivo chamado <span class="sb">`agents.local.md`</span> na raiz deste repositório antes de sugerir ou executar qualquer comando de terminal. Se o arquivo existir, suas instruções de execução, caminhos de diretório e preferências DEVEM sobrescrever o comportamento padrão.
+No início de cada sessão, verifique a existência de <span class="sb">`agents.local.md`</span> na raiz deste repositório e, se existir, leia-o. As instruções dele sobre acessar ferramentas externas, ambiente de execução, caminhos de diretório, confirmações do usuário, comandos de terminal, uso de MCPs e estilo de resposta <span class="gs">**DEVEM sobrescrever**</span> o comportamento padrão deste arquivo e das skills.
 </code></pre></div></div>
 
 <ol>
@@ -382,9 +384,9 @@ Sempre verifique silenciosamente a existência de um arquivo chamado <span class
 </code></pre></div></div>
 
 <h2 id="conclusão-escalando-a-ia-com-governança">Conclusão: Escalando a IA com Governança</h2>
-<p>A verdadeira maturidade na adoção de inteligência artificial por times de desenvolvimento não está em tentar criar um “super-prompt” único e imaculado que preveja todos os cenários. A resposta está em criar uma arquitetura de contexto que seja nativamente flexível.</p>
+<p>Nenhum prompt único vai cobrir o ambiente de todos os desenvolvedores, e tentar escrever um só deixa o arquivo maior e mais frágil. Funciona melhor dividir o contexto em camadas, e é isso que o Agents Override propõe: o que é do projeto fica no repositório, o que é do seu harness local fica na sua máquina.</p>
 
-<p>Seja a sua equipe usuária de <code class="language-plaintext highlighter-rouge">agents.md</code>, <code class="language-plaintext highlighter-rouge">.cursorrules</code>, .<code class="language-plaintext highlighter-rouge">windsurfrules</code> ou <code class="language-plaintext highlighter-rouge">claude.md</code>, o princípio fundamental da “separação de responsabilidades” deve prevalecer. Ao isolar o que é universal ao projeto daquilo que é específico da máquina, eliminamos o atrito da equipe, evitamos que a IA quebre o terminal dos colegas e garantimos que essa tecnologia atue exclusivamente como um multiplicador de produtividade.</p>
+<p>Seja qual for o arquivo da sua equipe, <code class="language-plaintext highlighter-rouge">agents.md</code>, <code class="language-plaintext highlighter-rouge">.cursorrules</code>, .<code class="language-plaintext highlighter-rouge">windsurfrules</code> ou <code class="language-plaintext highlighter-rouge">claude.md</code>, o princípio da “separação de responsabilidades” se aplica da mesma forma: ao separar as responsabilidades do projeto daquilo que é específico da máquina, eliminamos o atrito da equipe, evitamos que a IA quebre o terminal dos colegas e garantimos que essa tecnologia atue exclusivamente como um multiplicador de produtividade.</p>
 
         
       </section>
@@ -401,7 +403,7 @@ Sempre verifique silenciosamente a existência de um arquivo chamado <span class
         
 
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-10-05T00:00:00+00:00">October 5, 2026</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-updated" datetime="2026-10-06">October 6, 2026</time></p>
 
 
       </footer>

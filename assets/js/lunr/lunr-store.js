@@ -84,13 +84,13 @@ var store = [{
         "teaser": null
       },{
         "title": "Agents Override: Local Harness in Heterogeneous Teams",
-        "excerpt":"agents.md file overrides local harness Introduction The adoption of AI assistants directly in IDEs has changed the way we write software. Today, establishing an agents.md file in the root of the repository so that the artificial intelligence understands the rules is practically a standard. This concept has spread under various...","categories": ["en"],
+        "excerpt":"agents.local.md overrides agents.md for the local environment Introduction The adoption of AI assistants directly in IDEs has changed the way we write software. Each of them runs inside a harness: the layer around the model that defines which tools it can use, which instructions it gets, and what context it...","categories": ["en"],
         "tags": [],
         "url": "/blog/agents-override-local-harness-in-heterogeneous-teams/",
         "teaser": null
       },{
         "title": "Agents Override: Harness Local em Equipes Heterogêneas",
-        "excerpt":"agents.md file overrides local harness Introdução A adoção de assistentes de IA diretamente nas IDEs mudou a forma como escrevemos software. Hoje, é padrão estabelecer um arquivo agents.md na raiz do repositório para que a inteligência artificial entenda as regras. Esse conceito tem se espalhado sob diversos nomes: .cursorrules, .windsurfrules...","categories": ["pt-BR"],
+        "excerpt":"agents.local.md sobrescreve o agents.md no ambiente local Introdução A adoção de assistentes de IA diretamente nas IDEs mudou a forma como escrevemos software. Cada um deles roda dentro de um harness: a camada em volta do modelo que define quais ferramentas ele usa, quais instruções recebe e em que contexto...","categories": ["pt-BR"],
         "tags": [],
         "url": "/blog/agents-override-harness-local-em-equipes-heterogeneas/",
         "teaser": null
